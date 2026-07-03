@@ -1,0 +1,108 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.skill-card {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+  padding: 24px;
+  transition:
+    border-color var(--duration-normal) var(--ease-out),
+    box-shadow var(--duration-normal) var(--ease-out),
+    transform var(--duration-normal) var(--ease-out);
+}
+
+.skill-card:hover {
+  border-color: color-mix(in srgb, var(--accent) 30%, transparent);
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--accent) 9%, transparent);
+  transform: translateY(-3px);
+}
+
+.skill-glow {
+  position: absolute;
+  top: -48px;
+  inset-inline-end: -48px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 8%, transparent), transparent 70%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duration-normal) var(--ease-out);
+}
+
+.skill-card:hover .skill-glow {
+  opacity: 1;
+}
+
+.skill-card-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.skill-mark {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, transparent);
+  border-radius: 11px;
+  background: color-mix(in srgb, var(--accent) 9%, transparent);
+  color: var(--accent);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.skill-card h3 {
+  margin: 0;
+  color: var(--text);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+:host-context([dir="rtl"]) .skill-card h3 {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+}
+
+.skill-chip-list {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.skill-chip-list span {
+  border: 1px solid color-mix(in srgb, var(--accent) 16%, var(--border));
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--accent) 6%, transparent);
+  padding: 7px 12px;
+  color: var(--strong);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-card,
+  .skill-glow {
+    transition: none;
+  }
+}

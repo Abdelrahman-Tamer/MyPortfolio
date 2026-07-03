@@ -1,0 +1,16 @@
+<section class="container stats-container" aria-label="Portfolio stats">
+  <div class="resp-stats">
+    @for (stat of stats; track stat.id) {
+      <div class="stat-cell">
+        <div class="stat-num">
+          @if (statVisuals[$index].icon; as icon) {
+            <app-icon [name]="icon" [size]="31" />
+          } @else {
+            {{ statVisuals[$index].value }}
+          }
+        </div>
+        <div class="stat-label">{{ text(stat.label) }}</div>
+      </div>
+    }
+  </div>
+</section>

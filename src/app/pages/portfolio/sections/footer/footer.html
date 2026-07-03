@@ -1,0 +1,25 @@
+<footer class="resp-footer container">
+  <div class="footer-identity">
+    <span class="footer-name">{{ text(data.personal.name) }}</span>
+    <span class="footer-role">{{ text(data.personal.role) }}</span>
+  </div>
+
+  <nav class="footer-socials" aria-label="Social links">
+    @for (link of data.footer.socialLinks; track link.id) {
+      <a
+        [href]="link.href"
+        target="_blank"
+        rel="noopener noreferrer"
+        [attr.aria-label]="text(link.label)"
+      >
+        <app-icon [name]="socialIcon(link.id)" [size]="14" />
+        {{ text(link.label) }}
+      </a>
+    }
+  </nav>
+
+  <div class="footer-meta">
+    <span>{{ text(data.footer.copyright) }}</span>
+    <span>{{ text(data.footer.text) }}</span>
+  </div>
+</footer>

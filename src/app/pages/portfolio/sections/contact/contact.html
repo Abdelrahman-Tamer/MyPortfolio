@@ -1,0 +1,140 @@
+<section class="section container contact-section">
+  <header class="section-header">
+    <div class="section-kicker">
+      <span>05</span>
+      <i aria-hidden="true"></i>
+      {{ text(data.sectionHeadings.contact.label) }}
+    </div>
+  </header>
+
+  <div class="contact-duo">
+    <div class="contact-copy">
+      <h2 class="h-section">
+        {{ text(data.contact.heading) }}
+      </h2>
+
+      <p>{{ text(data.contact.paragraph) }}</p>
+
+      <div class="contact-list">
+        @for (row of rows; track row.id) {
+          <article class="contact-item">
+            <div class="contact-icon" aria-hidden="true">
+              <app-icon [name]="row.icon" [size]="17" />
+            </div>
+            <div class="contact-item-copy">
+              <div class="contact-label">{{ text(row.label) }}</div>
+              @if (row.href) {
+                <a [href]="row.href" [attr.dir]="row.forceLtr ? 'ltr' : null">{{ rowValue(row) }}</a>
+              } @else {
+                <span [attr.dir]="row.forceLtr ? 'ltr' : null">{{ rowValue(row) }}</span>
+              }
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+
+    <form class="contact-form" [formGroup]="contactForm" novalidate (submit)="handleSubmit($event)">
+      <div class="honeypot-field" aria-hidden="true">
+        <label for="contact-company-website">Company website</label>
+        <input
+          id="contact-company-website"
+          name="company_website"
+          type="text"
+          formControlName="company_website"
+          tabindex="-1"
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="form-field">
+        <label for="contact-name">{{ text(data.contact.formLabels.name) }}</label>
+        <input
+          id="contact-name"
+          name="user_name"
+          type="text"
+          formControlName="user_name"
+          [placeholder]="text(placeholders.name)"
+          autocomplete="name"
+          [attr.aria-invalid]="fieldError('user_name') ? 'true' : null"
+          aria-describedby="contact-name-error"
+          required
+        />
+        <p id="contact-name-error" class="form-error" aria-live="polite">
+          {{ fieldError('user_name') }}
+        </p>
+      </div>
+
+      <div class="form-field">
+        <label for="contact-email">{{ text(data.contact.formLabels.email) }}</label>
+        <input
+          id="contact-email"
+          name="user_email"
+          type="email"
+          formControlName="user_email"
+          [placeholder]="text(placeholders.email)"
+          autocomplete="email"
+          [attr.aria-invalid]="fieldError('user_email') ? 'true' : null"
+          aria-describedby="contact-email-error"
+          required
+          dir="ltr"
+        />
+        <p id="contact-email-error" class="form-error" aria-live="polite">
+          {{ fieldError('user_email') }}
+        </p>
+      </div>
+
+      <div class="form-field">
+        <label for="contact-subject">{{ text(labels.subject) }}</label>
+        <input
+          id="contact-subject"
+          name="subject"
+          type="text"
+          formControlName="subject"
+          [placeholder]="text(placeholders.subject)"
+          autocomplete="off"
+          [attr.aria-invalid]="fieldError('subject') ? 'true' : null"
+          aria-describedby="contact-subject-error"
+          required
+        />
+        <p id="contact-subject-error" class="form-error" aria-live="polite">
+          {{ fieldError('subject') }}
+        </p>
+      </div>
+
+      <div class="form-field">
+        <label for="contact-message">{{ text(data.contact.formLabels.message) }}</label>
+        <textarea
+          id="contact-message"
+          name="message"
+          formControlName="message"
+          [placeholder]="text(placeholders.message)"
+          [attr.aria-invalid]="fieldError('message') ? 'true' : null"
+          aria-describedby="contact-message-error"
+          rows="5"
+          required
+        ></textarea>
+        <p id="contact-message-error" class="form-error" aria-live="polite">
+          {{ fieldError('message') }}
+        </p>
+      </div>
+
+      <div class="form-feedback" aria-live="polite" role="status">
+        @if (status() === 'success') {
+          <p class="form-feedback-message success">{{ text(feedback.success) }}</p>
+        } @else if (status() === 'error') {
+          <p class="form-feedback-message error">{{ text(feedback.error) }}</p>
+        }
+      </div>
+
+      <button class="contact-submit" type="submit" [disabled]="isSending()" [attr.aria-busy]="isSending()">
+        @if (isSending()) {
+          <span class="submit-spinner" aria-hidden="true"></span>
+          <span>{{ text(feedback.sending) }}</span>
+        } @else {
+          <span>{{ text(data.contact.formLabels.submit) }}</span>
+        }
+      </button>
+    </form>
+  </div>
+</section>

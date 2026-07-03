@@ -1,0 +1,50 @@
+<section class="section container projects-section">
+  <header class="section-header">
+    <div class="section-kicker">
+      <span>03</span>
+      <i aria-hidden="true"></i>
+      {{ text(data.sectionHeadings.projects.label) }}
+    </div>
+
+    @if (data.sectionHeadings.projects.title; as title) {
+      <h2 class="h-section">{{ text(title) }}</h2>
+    }
+  </header>
+
+  <div class="pair">
+    @for (project of projects; track project.id) {
+      <app-project-card
+        [project]="project"
+        [index]="projectIndex($index)"
+        [accent]="projectAccents[$index]"
+      />
+    }
+  </div>
+
+  <section class="more-projects">
+    <header class="more-projects-header">
+      <div class="more-projects-kicker">
+        <i aria-hidden="true"></i>
+        <span>{{ text(data.sectionHeadings.moreProjects.label) }}</span>
+      </div>
+      @if (data.sectionHeadings.moreProjects.title; as subtitle) {
+        <p>{{ text(subtitle) }}</p>
+      }
+    </header>
+
+    <div class="trio">
+      @for (project of moreProjects; track project.id) {
+        <app-project-card
+          [project]="project"
+          [index]="projectIndex($index)"
+          accent="blue"
+          [compact]="true"
+        />
+      }
+    </div>
+  </section>
+</section>
+
+<div class="container section-divider" aria-hidden="true">
+  <div></div>
+</div>

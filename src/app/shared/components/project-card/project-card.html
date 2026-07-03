@@ -1,0 +1,303 @@
+<article
+  class="project-card"
+  [class.accent-blue]="accent() === 'blue'"
+  [class.accent-purple]="accent() === 'purple'"
+  [class.accent-green]="accent() === 'green'"
+  [class.accent-orange]="accent() === 'orange'"
+  [class.project-card-compact]="compact()"
+>
+  <div class="project-radial" aria-hidden="true"></div>
+
+  <div
+    class="project-preview"
+    dir="ltr"
+    [class.preview-receipta-pro]="previewType() === 'receipta-pro'"
+    [class.preview-nileguide]="previewType() === 'nileguide'"
+    [class.preview-freshcart]="previewType() === 'freshcart'"
+    [class.preview-doccure]="previewType() === 'doccure'"
+    [class.preview-bookmarker]="previewType() === 'bookmarker'"
+    [class.preview-luxestate]="previewType() === 'luxestate'"
+    [class.preview-axit]="previewType() === 'axit'"
+  >
+    <div class="preview-glow" aria-hidden="true"></div>
+    <div class="preview-chrome" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+      <i></i>
+    </div>
+
+    @if (hasProjectImage()) {
+      <img
+        class="project-image"
+        [src]="project().imageUrl!"
+        [alt]="imageAlt()"
+        [style.object-position]="imagePosition()"
+        loading="lazy"
+        (error)="handleImageError()"
+      />
+    } @else {
+      @switch (previewType()) {
+      @case ('receipta-pro') {
+        <div class="receipt-preview">
+          <aside>
+            <span class="is-active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </aside>
+          <main>
+            <div class="receipt-toolbar">
+              <b>PDF</b>
+              <span>Paid</span>
+              <span>Search</span>
+            </div>
+            <div class="receipt-paper">
+              <div class="receipt-head"></div>
+              <div class="receipt-row"></div>
+              <div class="receipt-row short"></div>
+              <div class="receipt-total"></div>
+            </div>
+            <div class="receipt-table">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </main>
+        </div>
+      }
+      @case ('nileguide') {
+        <div class="nile-preview">
+          <aside>
+            <span class="is-active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </aside>
+          <main>
+            <div class="report-line"></div>
+            <div class="activity-grid">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="api-row">
+              <b>API</b>
+              <i></i>
+              <i></i>
+            </div>
+          </main>
+        </div>
+      }
+      @case ('freshcart') {
+        <div class="cart-preview">
+          <main>
+            <div class="product-grid">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </main>
+          <aside>
+            <b>Cart</b>
+            <span></span>
+            <span></span>
+            <i>Pay</i>
+          </aside>
+        </div>
+      }
+      @case ('doccure') {
+        <div class="doc-preview">
+          <aside>
+            <div></div>
+            <span></span>
+            <span></span>
+          </aside>
+          <main>
+            <div class="doctor-card"></div>
+            <div class="appointment-grid">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </main>
+        </div>
+      }
+      @case ('bookmarker') {
+        <div class="bookmark-preview">
+          <div class="search-bar">
+            <span></span>
+            <b>URL</b>
+          </div>
+          <div class="bookmark-list">
+            <article>
+              <i></i>
+              <span></span>
+            </article>
+            <article>
+              <i></i>
+              <span></span>
+            </article>
+            <article>
+              <i></i>
+              <span></span>
+            </article>
+          </div>
+        </div>
+      }
+      @case ('luxestate') {
+        <div class="estate-preview">
+          <div class="estate-hero"></div>
+          <div class="property-grid">
+            <article></article>
+            <article></article>
+            <article></article>
+          </div>
+          <div class="agent-row">
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      }
+      @case ('axit') {
+        <div class="axit-preview">
+          <aside>
+            <span></span>
+            <span></span>
+            <b></b>
+          </aside>
+          <main>
+            <div class="feature-row">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="pricing-row">
+              <i></i>
+              <i></i>
+            </div>
+          </main>
+        </div>
+      }
+      @default {
+        <div class="generic-preview">
+          <aside>
+            <span class="is-active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </aside>
+          <main>
+            <div></div>
+            <section>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </section>
+          </main>
+        </div>
+      }
+      }
+    }
+  </div>
+
+  <div class="project-content">
+    <div class="project-heading-row">
+      <div class="project-heading-copy">
+        @if (project().type) {
+          <span class="project-type">
+            @if (isPrivate()) {
+              <app-icon name="lock" [size]="12" />
+            }
+            {{ text(project().type!) }}
+          </span>
+        }
+
+        <h3>
+          <span dir="ltr">{{ index() }}</span>
+          {{ text(project().title) }}
+        </h3>
+      </div>
+
+      <span class="project-arrow" aria-hidden="true">
+        <app-icon name="arrow-up-right" [size]="16" />
+      </span>
+    </div>
+
+    <p class="project-description">{{ text(project().description) }}</p>
+
+    @if (project().roleLine) {
+      <p class="project-role-line">{{ text(project().roleLine!) }}</p>
+    }
+
+    <div class="project-tags">
+      @for (tag of project().tags; track tag) {
+        <span dir="ltr">{{ tag }}</span>
+      }
+    </div>
+
+    @if (project().note) {
+      <div class="project-note">
+        <app-icon name="lock" [size]="13" />
+        {{ text(project().note!) }}
+      </div>
+    }
+
+    <div class="project-actions">
+      @if (primaryAction(); as action) {
+        @if (actionUrl(action); as url) {
+          <a
+            class="project-action primary"
+            [href]="url"
+            target="_blank"
+            rel="noopener noreferrer"
+            [attr.aria-label]="actionAriaLabel(action)"
+          >
+            <app-icon [name]="actionIcon(action)" [size]="13" />
+            {{ actionLabel(action) }}
+          </a>
+        } @else {
+          <button
+            class="project-action primary project-action-disabled"
+            type="button"
+            disabled
+            aria-disabled="true"
+            [attr.aria-label]="actionAriaLabel(action) + ' unavailable'"
+          >
+            <app-icon [name]="actionIcon(action)" [size]="13" />
+            {{ actionLabel(action) }}
+          </button>
+        }
+      }
+
+      @if (secondaryAction(); as action) {
+        @if (actionUrl(action); as url) {
+          <a
+            class="project-action secondary"
+            [href]="url"
+            target="_blank"
+            rel="noopener noreferrer"
+            [attr.aria-label]="actionAriaLabel(action)"
+          >
+            <app-icon [name]="actionIcon(action)" [size]="13" />
+            {{ actionLabel(action) }}
+          </a>
+        } @else {
+          <button
+            class="project-action secondary project-action-disabled"
+            type="button"
+            disabled
+            aria-disabled="true"
+            [attr.aria-label]="actionAriaLabel(action) + ' unavailable'"
+          >
+            <app-icon [name]="actionIcon(action)" [size]="13" />
+            {{ actionLabel(action) }}
+          </button>
+        }
+      }
+    </div>
+  </div>
+</article>

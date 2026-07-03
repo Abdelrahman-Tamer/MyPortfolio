@@ -1,0 +1,87 @@
+<section class="section container about-section">
+  <header class="section-header">
+    <div class="section-kicker">
+      <span>01</span>
+      <i aria-hidden="true"></i>
+      {{ text(data.sectionHeadings.about.label) }}
+    </div>
+  </header>
+
+  <div class="duo">
+    <div class="about-copy">
+      <h2 class="h-section">
+        {{ headingParts().before }}<span>{{ headingParts().accent }}</span>.
+      </h2>
+
+      @for (paragraph of paragraphs(); track $index) {
+        <p>{{ paragraph }}</p>
+      }
+
+      <div class="quick-facts">
+        @for (fact of quickFacts(); track fact.label) {
+          <article
+            class="quick-fact"
+            [class.accent-blue]="fact.color === 'blue'"
+            [class.accent-purple]="fact.color === 'purple'"
+            [class.accent-green]="fact.color === 'green'"
+            [class.accent-orange]="fact.color === 'orange'"
+          >
+            <div class="quick-icon" aria-hidden="true">
+              <app-icon [name]="fact.icon" [size]="15" />
+            </div>
+            <div class="quick-content">
+              <div class="quick-label">{{ fact.label }}</div>
+              <div class="quick-value" [attr.dir]="fact.forceLtr ? 'ltr' : null">{{ fact.value }}</div>
+            </div>
+          </article>
+        }
+      </div>
+
+      <div class="certifications">
+        <div class="certifications-title">
+          {{ languageService.isArabic() ? 'الشهادات' : 'Certifications' }}
+        </div>
+        <div class="certification-list">
+          @for (certification of certifications; track certification.id) {
+            <div class="certification-pill">
+              <app-icon name="award" [size]="14" />
+              <span>{{ text(certification.title) }}</span>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-panel">
+      <div class="timeline-line" aria-hidden="true"></div>
+
+      <div class="timeline-list">
+        @for (item of timeline; track item.id) {
+          <article
+            class="timeline-item"
+            [class.is-education]="isEducation($index)"
+            [class.accent-blue]="timelineAccent($index) === 'blue'"
+            [class.accent-purple]="timelineAccent($index) === 'purple'"
+            >
+            <div class="timeline-node" aria-hidden="true">
+              <span>
+                <app-icon [name]="isEducation($index) ? 'graduation-cap' : 'briefcase'" [size]="12" />
+              </span>
+            </div>
+
+            <div class="timeline-card">
+              <span class="timeline-date">{{ text(item.date) }}</span>
+              <h3>{{ text(item.title) }}</h3>
+              <div class="timeline-place">{{ text(item.place) }}</div>
+              <p>{{ text(item.description) }}</p>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container section-divider" aria-hidden="true">
+  <div></div>
+</div>

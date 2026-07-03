@@ -1,0 +1,90 @@
+<nav class="figma-nav" [class.is-solid]="scrolled() || menuOpen()">
+  <div class="container figma-nav-inner">
+    <button type="button" class="figma-logo" aria-label="Home" (click)="scrollTo('home')">
+      AE<span>.</span>
+    </button>
+
+    <div class="figma-nav-actions">
+      <div class="nav-links">
+        @for (link of navLinks(); track link.id) {
+          <a
+            [href]="link.href"
+            class="figma-nav-link"
+            [class.is-active]="activeSection() === link.id"
+            [attr.aria-current]="activeSection() === link.id ? 'location' : null"
+            (click)="scrollTo(link.id, $event)"
+          >
+            {{ text(link.label) }}
+            @if (activeSection() === link.id) {
+              <span class="nav-dot" aria-hidden="true"></span>
+            }
+          </a>
+        }
+        <span class="nav-divider" aria-hidden="true"></span>
+      </div>
+
+      <div class="language-switch" role="group" aria-label="Language">
+        <span class="language-switch-icon" aria-hidden="true">
+          <app-icon name="globe" [size]="14" />
+        </span>
+        @for (language of languages; track language) {
+          <button
+            type="button"
+            [class.is-active]="languageService.language() === language"
+            [attr.aria-pressed]="languageService.language() === language"
+            [attr.aria-label]="'Switch language to ' + language.toUpperCase()"
+            (click)="setLanguage(language)"
+          >
+            {{ language.toUpperCase() }}
+          </button>
+        }
+      </div>
+
+      <button
+        type="button"
+        class="theme-icon-button"
+        [attr.aria-label]="themeService.isDark() ? 'Switch to light theme' : 'Switch to dark theme'"
+        (click)="themeService.toggleTheme()"
+      >
+        @if (themeService.isDark()) {
+          <app-icon name="sun" [size]="17" />
+        } @else {
+          <app-icon name="moon" [size]="17" />
+        }
+      </button>
+
+      <button
+        type="button"
+        class="nav-burger"
+        [attr.aria-expanded]="menuOpen()"
+        aria-controls="portfolio-mobile-menu"
+        aria-label="Menu"
+        (click)="toggleMenu()"
+      >
+        @if (menuOpen()) {
+          <app-icon name="x" [size]="18" />
+        } @else {
+          <app-icon name="menu" [size]="18" />
+        }
+      </button>
+    </div>
+  </div>
+
+  @if (menuOpen()) {
+    <div class="nav-mobile-panel" id="portfolio-mobile-menu">
+      <div class="container nav-mobile-inner">
+        @for (link of navLinks(); track link.id) {
+          <a
+            [href]="link.href"
+            class="mobile-nav-link"
+            [class.is-active]="activeSection() === link.id"
+            [attr.aria-current]="activeSection() === link.id ? 'location' : null"
+            (click)="scrollTo(link.id, $event)"
+          >
+            {{ text(link.label) }}
+          </a>
+        }
+      </div>
+    </div>
+  }
+</nav>

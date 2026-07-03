@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# TODO: Replace with final deployed portfolio domain.
+Sitemap: https://your-domain.com/sitemap.xml

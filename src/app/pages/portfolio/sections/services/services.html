@@ -1,0 +1,42 @@
+<section class="section container services-section">
+  <header class="section-header">
+    <div class="section-kicker">
+      <span>02</span>
+      <i aria-hidden="true"></i>
+      {{ text(data.sectionHeadings.services.label) }}
+    </div>
+
+    <h2 class="h-section">{{ text(servicesTitle) }}</h2>
+  </header>
+
+  <div class="quad">
+    @for (service of services; track service.id) {
+      <article
+        class="service-card"
+        [class.accent-blue]="serviceMeta[$index].color === 'blue'"
+        [class.accent-purple]="serviceMeta[$index].color === 'purple'"
+        [class.accent-green]="serviceMeta[$index].color === 'green'"
+        [class.accent-orange]="serviceMeta[$index].color === 'orange'"
+      >
+        <div class="service-top-line" aria-hidden="true"></div>
+        <span class="service-index" aria-hidden="true">{{ $index + 1 }}</span>
+        <div class="service-glow" aria-hidden="true"></div>
+
+        <div class="service-icon" aria-hidden="true">
+          <app-icon [name]="serviceMeta[$index].icon" [size]="21" />
+        </div>
+        <h3>{{ text(service.title) }}</h3>
+        <p>{{ text(service.description) }}</p>
+
+        <div class="service-arrow" aria-hidden="true">
+          <span></span>
+          <app-icon name="arrow-up-right" [size]="15" />
+        </div>
+      </article>
+    }
+  </div>
+</section>
+
+<div class="container section-divider" aria-hidden="true">
+  <div></div>
+</div>

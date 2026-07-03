@@ -1,0 +1,90 @@
+:host {
+  display: block;
+}
+
+.resp-footer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 20px;
+  align-items: center;
+  border-top: 1px solid var(--border);
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.footer-identity,
+.footer-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.footer-name {
+  color: var(--text);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+:host-context([dir="rtl"]) .footer-name {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+}
+
+.footer-role,
+.footer-meta {
+  color: var(--faint);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.footer-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.footer-socials a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 42%, transparent);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 12px;
+  text-decoration: none;
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+}
+
+.footer-socials a:hover {
+  border-color: color-mix(in srgb, var(--accent) 35%, transparent);
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.footer-meta {
+  align-items: flex-end;
+  text-align: end;
+}
+
+@media (max-width: 768px) {
+  .resp-footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-identity,
+  .footer-meta {
+    align-items: center;
+    text-align: center;
+  }
+}

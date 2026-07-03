@@ -1,0 +1,29 @@
+<section class="section container skills-section">
+  <header class="section-header">
+    <div class="section-kicker">
+      <span>04</span>
+      <i aria-hidden="true"></i>
+      {{ text(data.sectionHeadings.skills.label) }}
+    </div>
+
+    @if (data.sectionHeadings.skills.title; as title) {
+      <h2 class="h-section">{{ text(title) }}</h2>
+    }
+  </header>
+
+  <p class="skills-subtitle">{{ text(subtitle) }}</p>
+
+  <div class="skills-grid">
+    @for (category of skills; track category.id) {
+      <app-skill-card
+        [category]="category"
+        [title]="text(category.title)"
+        [mark]="skillMarks[$index]"
+      />
+    }
+  </div>
+</section>
+
+<div class="container section-divider" aria-hidden="true">
+  <div></div>
+</div>

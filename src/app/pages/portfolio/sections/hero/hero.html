@@ -1,0 +1,86 @@
+<section class="resp-hero container">
+  <div class="hero-orb hero-orb-a" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb-b" aria-hidden="true"></div>
+
+  <div class="hero-copy">
+    <div class="hero-badge">
+      <span class="ping-dot" aria-hidden="true">
+        <span></span>
+        <span></span>
+      </span>
+      {{ text(data.hero.badge) }}
+      <span class="badge-divider" aria-hidden="true"></span>
+      <span class="map-pin" aria-hidden="true">
+        <app-icon name="map-pin" [size]="13" />
+      </span>
+      {{ text(data.personal.location) }}
+    </div>
+
+    <h1 class="hero-h1">
+      {{ nameParts().first }}
+      <br />
+      <span>{{ nameParts().second }}</span>
+    </h1>
+
+    <p class="hero-sub">
+      {{ roleLabel() }}
+      <span>Angular</span>
+    </p>
+
+    <p class="hero-description">{{ text(data.hero.description) }}</p>
+    <p class="hero-description client">{{ text(data.hero.clientLine) }}</p>
+
+    <div class="cta-row">
+      <a class="primary-cta" href="#projects">
+        {{ text(data.hero.primaryCta) }}
+        <app-icon name="arrow-up-right" [size]="16" [class.flip]="isRtl()" />
+      </a>
+      <a class="secondary-cta" href="#contact">
+        {{ text(data.hero.secondaryCta) }}
+        <app-icon name="mail" [size]="16" />
+      </a>
+    </div>
+
+    <div class="scroll-cue">
+      <app-icon name="arrow-up-right" [size]="14" class="scroll-cue-icon" />
+      {{ text(data.hero.scrollLabel) }}
+    </div>
+  </div>
+
+  <aside class="hero-code" dir="ltr" aria-label="Developer profile code snippet">
+    <div class="code-glow" aria-hidden="true"></div>
+    <div class="code-dots" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="code-lines">
+      <div class="code-comment">// profile.ts</div>
+      <div><span class="code-blue">const</span> <span class="code-text">developer</span> = {{ '{' }}</div>
+      @for (entry of codeEntries(); track entry[0]) {
+        <div class="code-indent"><span class="code-purple">{{ entry[0] }}</span>: <span class="code-green">{{ entry[1] }}</span>,</div>
+      }
+      <div class="code-indent"><span class="code-purple">available</span>: <span class="code-blue">true</span>,</div>
+      <div>{{ '}' }}</div>
+      <div class="code-stack"><span class="code-blue">const</span> <span class="code-text">stack</span> = [</div>
+      @for (item of stackItems; track item) {
+        <div class="code-indent"><span class="code-green">"{{ item }}"</span>@if (!$last) {<span>,</span>}</div>
+      }
+      <div>]</div>
+    </div>
+  </aside>
+</section>
+
+<div class="figma-marquee" aria-label="Featured skills">
+  <div class="marquee-edge marquee-edge-start" aria-hidden="true"></div>
+  <div class="marquee-edge marquee-edge-end" aria-hidden="true"></div>
+  <div class="marquee-track">
+    @for (tech of tickerLoop; track $index) {
+      <span>
+        {{ tech }}
+        <app-icon name="sparkles" [size]="12" />
+      </span>
+    }
+  </div>
+</div>
