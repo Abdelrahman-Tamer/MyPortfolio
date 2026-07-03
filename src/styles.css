@@ -391,6 +391,7 @@ html::-webkit-scrollbar-corner {
 .skills-ticker {
   position: relative;
   overflow: hidden;
+  direction: ltr;
   border-block: 1px solid var(--border);
   background: color-mix(in srgb, var(--surface) 26%, transparent);
   padding-block: 1rem;
@@ -1072,6 +1073,7 @@ html[dir="rtl"] .ticker-track {
 .figma-marquee {
   position: relative;
   overflow: hidden;
+  direction: ltr;
   margin-bottom: 96px;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);

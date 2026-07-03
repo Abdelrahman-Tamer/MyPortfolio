@@ -15,7 +15,12 @@ export class Hero {
 
   protected readonly data = portfolioData;
   protected readonly tickerSkills = portfolioData.featuredSkills;
-  protected readonly tickerLoop = [...portfolioData.featuredSkills, ...portfolioData.featuredSkills];
+  protected readonly tickerLoop = [
+    ...portfolioData.featuredSkills,
+    ...portfolioData.featuredSkills,
+    ...portfolioData.featuredSkills,
+    ...portfolioData.featuredSkills,
+  ];
   protected readonly stackItems = ['Angular', 'TypeScript', 'Tailwind', 'Git'];
   protected readonly codeEntries = computed(() => [
     ['name', `'${this.nameParts().first}'`],
