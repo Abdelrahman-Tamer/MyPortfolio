@@ -400,6 +400,7 @@ html::-webkit-scrollbar-corner {
   display: flex;
   width: max-content;
   gap: 2rem;
+  direction: ltr;
   animation: ticker 34s linear infinite;
 }
 
@@ -1100,6 +1101,7 @@ html[dir="rtl"] .ticker-track {
   display: flex;
   width: max-content;
   gap: 40px;
+  direction: ltr;
   white-space: nowrap;
   animation: marquee 30s linear infinite;
 }
