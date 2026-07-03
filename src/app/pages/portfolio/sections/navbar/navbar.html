@@ -23,22 +23,14 @@
         <span class="nav-divider" aria-hidden="true"></span>
       </div>
 
-      <div class="language-switch" role="group" aria-label="Language">
-        <span class="language-switch-icon" aria-hidden="true">
-          <app-icon name="globe" [size]="14" />
-        </span>
-        @for (language of languages; track language) {
-          <button
-            type="button"
-            [class.is-active]="languageService.language() === language"
-            [attr.aria-pressed]="languageService.language() === language"
-            [attr.aria-label]="'Switch language to ' + language.toUpperCase()"
-            (click)="setLanguage(language)"
-          >
-            {{ language.toUpperCase() }}
-          </button>
-        }
-      </div>
+      <button
+        type="button"
+        class="language-orb-button"
+        [attr.aria-label]="languageToggleLabel()"
+        (click)="toggleLanguage()"
+      >
+        {{ languageToggleText() }}
+      </button>
 
       <button
         type="button"

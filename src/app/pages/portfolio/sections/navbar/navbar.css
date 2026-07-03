@@ -4,35 +4,39 @@
 
 .figma-nav {
   position: fixed;
-  inset: 0 0 auto;
+  inset: 18px 0 auto;
   z-index: 50;
-  border-bottom: 1px solid transparent;
-  background-color: transparent;
   color: var(--text);
-  transition:
-    background-color var(--duration-normal) var(--ease-out),
-    border-color var(--duration-normal) var(--ease-out),
-    backdrop-filter var(--duration-normal) var(--ease-out);
-}
-
-.figma-nav.is-solid {
-  border-bottom-color: var(--border);
-  background-color: var(--nav-bg);
-  backdrop-filter: blur(16px);
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 40px;
+  pointer-events: none;
 }
 
 .figma-nav-inner {
   display: flex;
+  width: 80vw;
+  max-width: 1120px;
+  margin: 0 auto;
   height: 64px;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  border: 1px solid color-mix(in srgb, var(--border) 86%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--nav-bg) 88%, transparent);
+  box-shadow: 0 18px 48px color-mix(in srgb, var(--bg) 24%, transparent);
+  padding: 0 16px 0 22px;
+  pointer-events: auto;
+  backdrop-filter: blur(18px);
+  transition:
+    border-color var(--duration-normal) var(--ease-out),
+    background-color var(--duration-normal) var(--ease-out),
+    box-shadow var(--duration-normal) var(--ease-out),
+    transform var(--duration-normal) var(--ease-out);
+}
+
+.figma-nav.is-solid .figma-nav-inner {
+  border-color: color-mix(in srgb, var(--accent) 18%, var(--border));
+  background: color-mix(in srgb, var(--nav-bg) 94%, transparent);
+  box-shadow: 0 22px 60px color-mix(in srgb, var(--bg) 34%, transparent);
 }
 
 .figma-logo {
@@ -96,42 +100,7 @@
   margin: 0 8px;
 }
 
-.language-switch {
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-}
-
-.language-switch-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding-inline: 9px 6px;
-  color: var(--faint);
-}
-
-.language-switch button {
-  border: none;
-  background: transparent;
-  color: var(--muted);
-  cursor: pointer;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  padding: 5px 11px;
-  transition:
-    background-color var(--duration-fast) var(--ease-out),
-    color var(--duration-fast) var(--ease-out),
-    transform var(--duration-fast) var(--ease-out);
-}
-
-.language-switch button.is-active {
-  background: var(--accent);
-  color: var(--on-accent);
-}
-
+.language-orb-button,
 .theme-icon-button,
 .nav-burger {
   display: flex;
@@ -140,7 +109,7 @@
   align-items: center;
   justify-content: center;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 50%;
   background: transparent;
   color: var(--text);
   cursor: pointer;
@@ -152,16 +121,25 @@
     transform var(--duration-fast) var(--ease-out);
 }
 
+.language-orb-button {
+  color: var(--accent);
+  font-family: "Space Grotesk", "IBM Plex Sans Arabic", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+}
+
 .theme-icon-button:hover,
-.nav-burger:hover {
+.nav-burger:hover,
+.language-orb-button:hover {
   border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
 }
 
 .theme-icon-button:active,
 .nav-burger:active,
 .figma-nav-link:active,
 .mobile-nav-link:active,
-.language-switch button:active {
+.language-orb-button:active {
   transform: scale(0.97);
 }
 
@@ -174,12 +152,17 @@
 
 .nav-burger {
   display: none;
+  border-radius: 8px;
 }
 
 .nav-mobile-panel {
+  width: min(80vw, 1120px);
+  margin: 10px auto 0;
   overflow: hidden;
-  border-top: 1px solid var(--border);
-  background: var(--menu-bg);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: color-mix(in srgb, var(--menu-bg) 94%, transparent);
+  pointer-events: auto;
   backdrop-filter: blur(16px);
 }
 
@@ -187,7 +170,7 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-  padding-block: 12px 20px;
+  padding: 12px 20px 20px;
 }
 
 .mobile-nav-link {
@@ -212,25 +195,26 @@
 }
 
 @media (max-width: 768px) {
+  .figma-nav {
+    inset-block-start: 12px;
+  }
+
+  .figma-nav-inner,
+  .nav-mobile-panel {
+    width: calc(100vw - 24px);
+    max-width: none;
+  }
+
+  .figma-nav-inner {
+    height: 58px;
+    padding-inline: 16px 12px;
+  }
+
   .nav-links {
     display: none;
   }
 
   .nav-burger {
     display: flex;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
-
-@media (max-width: 360px) {
-  .container {
-    padding-left: 16px;
-    padding-right: 16px;
   }
 }

@@ -1,7 +1,6 @@
 import { afterNextRender, Component, computed, DestroyRef, inject, signal } from '@angular/core';
 import { portfolioData } from '../../../../core/data/portfolio.data';
 import { LanguageService } from '../../../../core/services/language.service';
-import { Language } from '../../../../core/services/language.service';
 import { ThemeService } from '../../../../core/services/theme.service';
 import { LocalizedText } from '../../../../core/models/portfolio.models';
 import { IconComponent } from '../../../../shared/components/icon/icon';
@@ -20,7 +19,10 @@ export class Navbar {
   protected readonly scrolled = signal(false);
   protected readonly activeSection = signal('');
   protected readonly navKeys = ['about', 'projects', 'skills', 'contact'];
-  protected readonly languages: readonly Language[] = ['en', 'ar'];
+  protected readonly languageToggleText = computed(() => (this.languageService.isArabic() ? 'ع' : 'EN'));
+  protected readonly languageToggleLabel = computed(() =>
+    this.languageService.isArabic() ? 'Switch language to English' : 'Switch language to Arabic',
+  );
 
   protected readonly navLinks = computed(() =>
     this.navKeys
@@ -68,8 +70,8 @@ export class Navbar {
     return value[this.languageService.language()];
   }
 
-  protected setLanguage(language: Language): void {
-    this.languageService.setLanguage(language);
+  protected toggleLanguage(): void {
+    this.languageService.toggleLanguage();
   }
 
   protected scrollTo(section: string, event?: Event): void {

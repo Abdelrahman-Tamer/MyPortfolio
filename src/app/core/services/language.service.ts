@@ -3,7 +3,7 @@ import { computed, Service, signal } from '@angular/core';
 export type Language = 'en' | 'ar';
 export type TextDirection = 'ltr' | 'rtl';
 
-const LANGUAGE_STORAGE_KEY = 'portfolio-language';
+const LANGUAGE_STORAGE_KEY = 'portfolio-language-v2';
 const DEFAULT_LANGUAGE: Language = 'en';
 
 @Service()

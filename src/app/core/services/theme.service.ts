@@ -2,8 +2,8 @@ import { computed, Service, signal } from '@angular/core';
 
 export type Theme = 'dark' | 'light';
 
-const THEME_STORAGE_KEY = 'portfolio-theme';
-const DEFAULT_THEME: Theme = 'dark';
+const THEME_STORAGE_KEY = 'portfolio-theme-v2';
+const DEFAULT_THEME: Theme = 'light';
 
 @Service()
 export class ThemeService {
