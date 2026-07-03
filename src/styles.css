@@ -445,8 +445,18 @@ html::-webkit-scrollbar-corner {
   }
 }
 
-:root[dir="rtl"] .ticker-track {
-  animation-direction: reverse;
+@keyframes ticker-rtl {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+html[dir="rtl"] .ticker-track {
+  animation-name: ticker-rtl;
 }
 
 @media (max-width: 900px) {
@@ -1115,8 +1125,18 @@ html::-webkit-scrollbar-corner {
   }
 }
 
-:root[dir="rtl"] .marquee-track {
-  animation-direction: reverse;
+@keyframes marquee-rtl {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+html[dir="rtl"] .marquee-track {
+  animation-name: marquee-rtl;
 }
 
 .project-card {

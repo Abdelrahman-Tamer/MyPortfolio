@@ -63,16 +63,13 @@ Public assets are copied from `public/`, including:
 - `sitemap.xml`
 - `site.webmanifest`
 
-## SEO TODO
+## SEO
 
-Before final deployment, replace the placeholder domain `https://your-domain.com/` in:
+The current production domain used for canonical, Open Graph, Twitter, robots, and sitemap URLs is:
 
-- `src/index.html`
-- `src/app/core/services/seo.service.ts`
-- `public/robots.txt`
-- `public/sitemap.xml`
+`https://abdelrahman-emam-portfolio.vercel.app/`
 
-Also replace `public/og-preview.svg` with a final branded preview image if needed.
+Replace `public/og-preview.svg` with a final branded preview image if needed.
 
 ## Contact Form
 

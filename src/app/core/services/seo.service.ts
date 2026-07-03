@@ -12,10 +12,9 @@ const PORTFOLIO_SEO: SeoMetadata = {
   title: 'Abdelrahman Emam | Angular Frontend Developer',
   description:
     'Angular Frontend Developer in Cairo building responsive web interfaces, REST API integrations, and client-ready projects.',
-  // TODO: Replace with final deployed portfolio domain.
-  url: 'https://your-domain.com/',
+  url: 'https://abdelrahman-emam-portfolio.vercel.app/',
   // TODO: Replace with the final social preview image if a branded image is produced.
-  image: 'https://your-domain.com/og-preview.svg',
+  image: 'https://abdelrahman-emam-portfolio.vercel.app/og-preview.svg',
 };
 
 @Service()
