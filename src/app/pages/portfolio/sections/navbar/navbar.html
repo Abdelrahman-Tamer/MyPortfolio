@@ -4,25 +4,25 @@
       AE<span>.</span>
     </button>
 
-    <div class="figma-nav-actions">
-      <div class="nav-links">
-        @for (link of navLinks(); track link.id) {
-          <a
-            [href]="link.href"
-            class="figma-nav-link"
-            [class.is-active]="activeSection() === link.id"
-            [attr.aria-current]="activeSection() === link.id ? 'location' : null"
-            (click)="scrollTo(link.id, $event)"
-          >
-            {{ text(link.label) }}
-            @if (activeSection() === link.id) {
-              <span class="nav-dot" aria-hidden="true"></span>
-            }
-          </a>
-        }
-        <span class="nav-divider" aria-hidden="true"></span>
-      </div>
+    <div class="nav-links">
+      @for (link of navLinks(); track link.id) {
+        <a
+          [href]="link.href"
+          class="figma-nav-link"
+          [class.is-active]="activeSection() === link.id"
+          [attr.aria-current]="activeSection() === link.id ? 'location' : null"
+          (click)="scrollTo(link.id, $event)"
+        >
+          {{ text(link.label) }}
+          @if (activeSection() === link.id) {
+            <span class="nav-dot" aria-hidden="true"></span>
+          }
+        </a>
+      }
+    </div>
 
+    <div class="figma-nav-actions">
+      <span class="nav-divider" aria-hidden="true"></span>
       <button
         type="button"
         class="language-orb-button"
