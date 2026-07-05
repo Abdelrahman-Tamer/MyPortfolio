@@ -31,6 +31,7 @@ export type IconName =
   | 'smartphone'
   | 'sparkles'
   | 'sun'
+  | 'terminal'
   | 'wrench'
   | 'x';
 
@@ -195,6 +196,11 @@ export type IconName =
           <path d="M20 12h2" />
           <path d="m4.9 19.1 1.4-1.4" />
           <path d="m17.7 6.3 1.4-1.4" />
+        }
+        @case ('terminal') {
+          <rect x="3" y="4" width="18" height="16" rx="2.5" />
+          <path d="m7.2 9 3.2 3-3.2 3" />
+          <path d="M12.6 15h4.2" />
         }
         @case ('wrench') {
           <path d="M14.7 6.3a4.5 4.5 0 0 0 5.6 5.6L11 21.2a2.2 2.2 0 0 1-3.1-3.1l9.3-9.3a4.5 4.5 0 0 1-2.5-2.5Z" />
