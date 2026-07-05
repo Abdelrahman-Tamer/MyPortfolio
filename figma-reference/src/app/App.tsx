@@ -580,7 +580,7 @@ export default function App() {
               <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
                 <ContactItem icon={<Mail size={15} color={a.blue} />} label={t.ciEmail} value="abdelrahmanacc84@gmail.com" href="mailto:abdelrahmanacc84@gmail.com" {...shared} />
                 <ContactItem icon={<Phone size={15} color={a.blue} />} label={t.ciPhone} value="+20 1122615864" href="tel:+201122615864" {...shared} />
-                <ContactItem icon={<Linkedin size={15} color={a.blue} />} label={t.ciLinkedin} value="linkedin.com/in/abd-elrahman-emam" href="https://linkedin.com/in/abd-elrahman-emam" {...shared} />
+                <ContactItem icon={<Linkedin size={15} color={a.blue} />} label={t.ciLinkedin} value="linkedin.com/in/abd-el-rahman-emam" href="https://www.linkedin.com/in/abd-el-rahman-emam" {...shared} />
                 <ContactItem icon={<Github size={15} color={a.blue} />} label={t.ciGithub} value="github.com/Abdelrahman-Tamer" href="https://github.com/Abdelrahman-Tamer" {...shared} />
                 <ContactItem icon={<MapPin size={15} color={a.blue} />} label={t.ciLocation} value={t.location} {...shared} />
               </div>

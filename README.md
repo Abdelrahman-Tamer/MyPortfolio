@@ -19,7 +19,7 @@ Angular portfolio website for Abdelrahman Emam, a Frontend Developer and Angular
 - English and Arabic language toggle
 - Data-driven portfolio content from `src/app/core/data/portfolio.data.ts`
 - SEO metadata, Open Graph, Twitter card metadata, JSON-LD, robots.txt, sitemap.xml, manifest, favicon, and social preview SVG
-- UI-only contact form
+- EmailJS-powered contact form with validation
 
 ## Run Locally
 
@@ -73,4 +73,4 @@ Replace `public/og-preview.svg` with a final branded preview image if needed.
 
 ## Contact Form
 
-The contact form is currently UI-only. It prevents the default submit action and does not send emails or connect to EmailJS/backend yet.
+The contact form sends messages through EmailJS using the public client configuration in `src/app/core/config/contact.config.ts`.

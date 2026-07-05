@@ -647,7 +647,7 @@ export const portfolioData = {
           en: 'LinkedIn',
           ar: 'LinkedIn',
         },
-        href: 'https://linkedin.com/in/abd-elrahman-emam',
+        href: 'https://www.linkedin.com/in/abd-el-rahman-emam',
       },
       {
         id: 'github',

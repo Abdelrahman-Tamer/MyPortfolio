@@ -167,12 +167,7 @@ export class Contact {
 
     this.isSending.set(true);
 
-    const templateParams = {
-      user_name: this.contactForm.controls.user_name.value.trim(),
-      user_email: this.contactForm.controls.user_email.value.trim(),
-      subject: this.contactForm.controls.subject.value.trim(),
-      message: this.contactForm.controls.message.value.trim(),
-    };
+    const templateParams = this.emailTemplateParams();
 
     try {
       await emailjs.send(
@@ -191,6 +186,28 @@ export class Contact {
     } finally {
       this.isSending.set(false);
     }
+  }
+
+  private emailTemplateParams(): Record<string, string> {
+    const name = this.contactForm.controls.user_name.value.trim();
+    const email = this.contactForm.controls.user_email.value.trim();
+    const subject = this.contactForm.controls.subject.value.trim();
+    const message = this.contactForm.controls.message.value.trim();
+
+    return {
+      user_name: name,
+      user_email: email,
+      from_name: name,
+      from_email: email,
+      name,
+      email,
+      reply_to: email,
+      to_name: portfolioData.personal.name.en,
+      to_email: portfolioData.contact.email,
+      subject,
+      title: subject,
+      message,
+    };
   }
 
   private resetForm(): void {
