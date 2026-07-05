@@ -89,7 +89,9 @@ export class Navbar {
     }
 
     if (typeof window !== 'undefined') {
-      window.history.pushState(null, '', `#${section}`);
+      const path = section === 'home' ? '/' : `/${section}`;
+
+      window.history.pushState(null, '', path);
       const top = target.getBoundingClientRect().top + window.scrollY;
       window.requestAnimationFrame(() => window.scrollTo({ top, behavior: 'smooth' }));
       return;

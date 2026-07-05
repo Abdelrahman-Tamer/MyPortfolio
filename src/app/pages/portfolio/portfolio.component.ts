@@ -1,4 +1,5 @@
 import { afterNextRender, Component, DestroyRef, ElementRef, inject, viewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { About } from './sections/about/about';
 import { Contact } from './sections/contact/contact';
 import { Footer } from './sections/footer/footer';
@@ -9,7 +10,6 @@ import { Services } from './sections/services/services';
 import { Skills } from './sections/skills/skills';
 import { Stats } from './sections/stats/stats';
 import { contactConfig } from '../../core/config/contact.config';
-import { SeoService } from '../../core/services/seo.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -19,7 +19,7 @@ import { SeoService } from '../../core/services/seo.service';
 })
 export class PortfolioComponent {
   private readonly destroyRef = inject(DestroyRef);
-  private readonly seoService = inject(SeoService);
+  private readonly route = inject(ActivatedRoute);
   private readonly cursorSpot = viewChild<ElementRef<HTMLElement>>('cursorSpot');
   protected readonly whatsappHref = `https://wa.me/${contactConfig.whatsappNumber}?text=${encodeURIComponent(contactConfig.whatsappMessage)}`;
   private readonly revealSelectors = [
@@ -36,12 +36,27 @@ export class PortfolioComponent {
   ].join(',');
 
   constructor() {
-    this.seoService.setPortfolioMetadata();
-
     afterNextRender(() => {
+      this.scrollToInitialSection();
       this.setupCursorSpot();
       this.setupScrollReveal();
     });
+  }
+
+  private scrollToInitialSection(): void {
+    const sectionId = this.route.snapshot.data['sectionId'];
+
+    if (typeof sectionId !== 'string' || sectionId === 'home' || typeof document === 'undefined') {
+      return;
+    }
+
+    const target = document.getElementById(sectionId);
+
+    if (!target || typeof window === 'undefined') {
+      return;
+    }
+
+    window.requestAnimationFrame(() => target.scrollIntoView({ block: 'start' }));
   }
 
   private setupCursorSpot(): void {

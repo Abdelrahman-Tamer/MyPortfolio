@@ -38,7 +38,7 @@ export const portfolioData = {
         en: 'Home',
         ar: 'الرئيسية',
       },
-      href: '#home',
+      href: '/',
     },
     {
       id: 'about',
@@ -46,7 +46,7 @@ export const portfolioData = {
         en: 'About',
         ar: 'عني',
       },
-      href: '#about',
+      href: '/about',
     },
     {
       id: 'services',
@@ -54,7 +54,7 @@ export const portfolioData = {
         en: 'Services',
         ar: 'الخدمات',
       },
-      href: '#services',
+      href: '/services',
     },
     {
       id: 'projects',
@@ -62,7 +62,7 @@ export const portfolioData = {
         en: 'Projects',
         ar: 'المشاريع',
       },
-      href: '#projects',
+      href: '/projects',
     },
     {
       id: 'skills',
@@ -70,7 +70,7 @@ export const portfolioData = {
         en: 'Skills',
         ar: 'المهارات',
       },
-      href: '#skills',
+      href: '/skills',
     },
     {
       id: 'contact',
@@ -78,7 +78,7 @@ export const portfolioData = {
         en: 'Contact',
         ar: 'تواصل',
       },
-      href: '#contact',
+      href: '/contact',
     },
   ],
   hero: {

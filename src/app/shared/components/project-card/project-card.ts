@@ -1,4 +1,5 @@
 import { Component, computed, inject, input, signal } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 import { LanguageService } from '../../../core/services/language.service';
 import type { LocalizedText, ProjectAction, ProjectItem } from '../../../core/models/portfolio.models';
 import { IconComponent, type IconName } from '../icon/icon';
@@ -7,7 +8,7 @@ export type ProjectAccent = 'blue' | 'purple' | 'green' | 'orange';
 
 @Component({
   selector: 'app-project-card',
-  imports: [IconComponent],
+  imports: [IconComponent, NgOptimizedImage],
   templateUrl: './project-card.html',
   styleUrl: './project-card.css',
 })

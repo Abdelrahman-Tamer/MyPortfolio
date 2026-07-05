@@ -1,4 +1,5 @@
-import { computed, Service, signal } from '@angular/core';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { computed, inject, PLATFORM_ID, Service, signal } from '@angular/core';
 
 export type Language = 'en' | 'ar';
 export type TextDirection = 'ltr' | 'rtl';
@@ -8,6 +9,9 @@ const DEFAULT_LANGUAGE: Language = 'en';
 
 @Service()
 export class LanguageService {
+  private readonly document = inject(DOCUMENT);
+  private readonly platformId = inject(PLATFORM_ID);
+  private readonly isBrowser = isPlatformBrowser(this.platformId);
   private readonly currentLanguage = signal<Language>(this.loadLanguage());
 
   readonly language = this.currentLanguage.asReadonly();
@@ -54,24 +58,30 @@ export class LanguageService {
   }
 
   private readStorage(key: string): string | null {
+    if (!this.isBrowser) {
+      return null;
+    }
+
     try {
-      return typeof localStorage === 'undefined' ? null : localStorage.getItem(key);
+      return localStorage.getItem(key);
     } catch {
       return null;
     }
   }
 
   private writeStorage(key: string, value: string): void {
+    if (!this.isBrowser) {
+      return;
+    }
+
     try {
-      if (typeof localStorage !== 'undefined') {
-        localStorage.setItem(key, value);
-      }
+      localStorage.setItem(key, value);
     } catch {
       return;
     }
   }
 
   private getDocumentRoot(): HTMLElement | null {
-    return typeof document === 'undefined' ? null : document.documentElement;
+    return this.document.documentElement;
   }
 }

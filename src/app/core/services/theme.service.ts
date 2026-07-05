@@ -1,4 +1,5 @@
-import { computed, Service, signal } from '@angular/core';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { computed, inject, PLATFORM_ID, Service, signal } from '@angular/core';
 
 export type Theme = 'dark' | 'light';
 
@@ -7,6 +8,9 @@ const DEFAULT_THEME: Theme = 'light';
 
 @Service()
 export class ThemeService {
+  private readonly document = inject(DOCUMENT);
+  private readonly platformId = inject(PLATFORM_ID);
+  private readonly isBrowser = isPlatformBrowser(this.platformId);
   private readonly currentTheme = signal<Theme>(this.loadTheme());
 
   readonly theme = this.currentTheme.asReadonly();
@@ -51,24 +55,30 @@ export class ThemeService {
   }
 
   private readStorage(key: string): string | null {
+    if (!this.isBrowser) {
+      return null;
+    }
+
     try {
-      return typeof localStorage === 'undefined' ? null : localStorage.getItem(key);
+      return localStorage.getItem(key);
     } catch {
       return null;
     }
   }
 
   private writeStorage(key: string, value: string): void {
+    if (!this.isBrowser) {
+      return;
+    }
+
     try {
-      if (typeof localStorage !== 'undefined') {
-        localStorage.setItem(key, value);
-      }
+      localStorage.setItem(key, value);
     } catch {
       return;
     }
   }
 
   private getDocumentRoot(): HTMLElement | null {
-    return typeof document === 'undefined' ? null : document.documentElement;
+    return this.document.documentElement;
   }
 }

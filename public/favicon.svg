@@ -1,14 +1,6 @@
-<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img">
-  <title>AE logo</title>
-  <rect width="64" height="64" rx="14" fill="#0b0e14"/>
-  <text
-    x="12"
-    y="42"
-    font-family="'Space Grotesk', 'Inter', 'Segoe UI', Arial, sans-serif"
-    font-size="28"
-    font-weight="700"
-    fill="#ffffff"
-    letter-spacing="-1"
-  >AE</text>
-  <circle cx="50" cy="40" r="4" fill="#60a5fa"/>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">AE logo</title>
+  <rect width="64" height="64" fill="#070d1c"/>
+  <text x="7" y="41" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="800" letter-spacing="-1.5" fill="#f8fafc">AE</text>
+  <circle cx="52.5" cy="39.5" r="3.2" fill="#60a5fa"/>
 </svg>

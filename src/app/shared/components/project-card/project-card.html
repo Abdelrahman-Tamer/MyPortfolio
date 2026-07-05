@@ -30,7 +30,9 @@
     @if (hasProjectImage()) {
       <img
         class="project-image"
-        [src]="project().imageUrl!"
+        [ngSrc]="project().imageUrl!"
+        width="1672"
+        height="941"
         [alt]="imageAlt()"
         [style.object-position]="imagePosition()"
         loading="lazy"
