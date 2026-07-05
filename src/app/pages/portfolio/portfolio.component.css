@@ -21,9 +21,16 @@
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, var(--spot) 0%, transparent 70%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 18%, transparent) 0%, transparent 68%);
+  opacity: 0.78;
   pointer-events: none;
+  transform: translate3d(calc(50vw - 300px), calc(50vh - 300px), 0);
+  transition: opacity var(--duration-normal) var(--ease-out);
   will-change: transform;
+}
+
+.cursor-spot.is-active {
+  opacity: 1;
 }
 
 .portfolio-grid-bg {
@@ -87,7 +94,7 @@
   transform: scale(0.97);
 }
 
-@media (hover: none) {
+@media (max-width: 768px) {
   .cursor-spot {
     display: none;
   }

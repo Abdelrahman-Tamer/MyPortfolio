@@ -21,7 +21,7 @@ export const portfolioData = {
       ar: 'عبدالرحمن إمام',
     },
     role: {
-      en: 'Junior Frontend Developer | Angular Developer',
+      en: 'Frontend Developer | Angular Developer',
       ar: 'مطور واجهات أمامية | Angular Developer',
     },
     location: {
@@ -128,10 +128,10 @@ export const portfolioData = {
       },
     },
     {
-      id: 'client-work',
+      id: 'projects-completed',
       label: {
-        en: 'Client Work Delivered',
-        ar: 'مشروع عميل فعلي',
+        en: '7+ Projects Completed',
+        ar: '7+ مشاريع مكتملة',
       },
     },
     {
@@ -209,8 +209,8 @@ export const portfolioData = {
       ar: 'مطور واجهات يركز على الواجهات النظيفة والربط الحقيقي.',
     },
     paragraph: {
-      en: 'Junior Frontend Developer specializing in Angular and responsive web development. Experienced in building SPAs with authentication, REST API integration, route guards, reactive forms, Firebase Firestore, and client-side storage. Delivered projects across e-commerce, healthcare, productivity, landing pages, and a live client receipt management system. Also contributed to backend APIs and admin-related features in a graduation project using ASP.NET Core.',
-      ar: 'مطور واجهات أمامية Junior متخصص في Angular وتطوير الواجهات المتجاوبة. لدي خبرة في بناء Single Page Applications تشمل تسجيل الدخول، ربط REST APIs، Route Guards، Reactive Forms، Firebase Firestore، والتخزين داخل المتصفح. نفذت مشاريع في التجارة الإلكترونية، الرعاية الصحية، الإنتاجية، صفحات الهبوط، بالإضافة إلى مشروع عميل فعلي لإدارة الإيصالات. كما ساهمت في تطوير Backend APIs وبعض أجزاء Admin في مشروع التخرج باستخدام ASP.NET Core.',
+      en: 'Frontend Developer specializing in Angular and responsive web development. Experienced in building SPAs with authentication, REST API integration, route guards, reactive forms, Firebase Firestore, and client-side storage. Delivered projects across e-commerce, healthcare, productivity, landing pages, and a live client receipt management system. Also contributed to backend APIs and admin-related features in a graduation project using ASP.NET Core.',
+      ar: 'مطور واجهات أمامية متخصص في Angular وتطوير الواجهات المتجاوبة. لدي خبرة في بناء Single Page Applications تشمل تسجيل الدخول، ربط REST APIs، Route Guards، Reactive Forms، Firebase Firestore، والتخزين داخل المتصفح. نفذت مشاريع في التجارة الإلكترونية، الرعاية الصحية، الإنتاجية، صفحات الهبوط، بالإضافة إلى مشروع عميل فعلي لإدارة الإيصالات. كما ساهمت في تطوير Backend APIs وبعض أجزاء Admin في مشروع التخرج باستخدام ASP.NET Core.',
     },
   },
   timeline: [
@@ -234,6 +234,25 @@ export const portfolioData = {
       },
     },
     {
+      id: 'cib-egypt',
+      title: {
+        en: 'Internship Trainee',
+        ar: 'متدرب',
+      },
+      place: {
+        en: 'CIB Egypt, Cairo, Egypt',
+        ar: 'CIB Egypt، القاهرة، مصر',
+      },
+      date: {
+        en: 'Sep 2025',
+        ar: 'سبتمبر 2025',
+      },
+      description: {
+        en: 'Completed a structured internship at Commercial International Bank (CIB), gaining exposure to banking operations, documentation workflows, collaboration practices, and professional business processes.',
+        ar: 'أكملت تدريبًا منظمًا في Commercial International Bank (CIB) مع التعرف على عمليات مصرفية، سير عمل التوثيق، أساليب التعاون، والإجراءات المهنية.',
+      },
+    },
+    {
       id: 'elevvo-pathways',
       title: {
         en: 'Frontend Web Developer',
@@ -250,25 +269,6 @@ export const portfolioData = {
       description: {
         en: 'Built 5+ responsive pages and improved UI consistency before delivery.',
         ar: 'نفذت 5+ صفحات متجاوبة وحسّنت تناسق الواجهات قبل التسليم.',
-      },
-    },
-    {
-      id: 'cib-egypt',
-      title: {
-        en: 'Internship Trainee',
-        ar: 'متدرب',
-      },
-      place: {
-        en: 'CIB Egypt, Cairo, Egypt',
-        ar: 'CIB Egypt، القاهرة، مصر',
-      },
-      date: {
-        en: 'Sep 2025',
-        ar: 'سبتمبر 2025',
-      },
-      description: {
-        en: 'Completed a structured banking internship with task documentation and review.',
-        ar: 'أكملت تدريبًا مصرفيًا منظمًا مع توثيق المهام والمراجعة.',
       },
     },
     {
@@ -338,6 +338,32 @@ export const portfolioData = {
     },
   ],
   featuredProjects: [
+    {
+      id: 'freshcart',
+      imageUrl: '/images/freshcart.png',
+      imageAlt: {
+        en: 'FreshCart e-commerce product page preview',
+        ar: 'معاينة صفحة منتجات FreshCart',
+      },
+      imagePosition: 'center top',
+      title: {
+        en: 'FreshCart E-commerce',
+        ar: 'FreshCart - متجر إلكتروني',
+      },
+      type: {
+        en: 'Route Academy Final Project',
+        ar: 'مشروع Route Academy النهائي',
+      },
+      description: {
+        en: 'Full Angular e-commerce SPA with product catalog, search, category and brand filters, cart, wishlist, checkout flow, JWT authentication, route guards, Stripe payment, and lazy loading.',
+        ar: 'تطبيق متجر إلكتروني Angular SPA يشمل عرض المنتجات، البحث، فلاتر التصنيفات والماركات، السلة، المفضلة، الدفع، JWT Authentication، Route Guards، Stripe، و Lazy Loading.',
+      },
+      tags: ['Angular 17', 'TypeScript', 'Bootstrap 5', 'REST APIs', 'JWT', 'Stripe'],
+      actions: [
+        { ...liveDemoAction, url: 'https://fresh-cart-roan-seven.vercel.app/' },
+        { ...githubAction, url: 'https://github.com/Abdelrahman-Tamer/FreshCart.git' },
+      ],
+    },
     {
       id: 'receipta-pro',
       imageUrl: '/images/rec.png',
@@ -418,32 +444,8 @@ export const portfolioData = {
         { ...githubAction, url: 'https://github.com/Abdelrahman-Tamer/NileGuideAngular.git' },
       ],
     },
-    {
-      id: 'freshcart',
-      imageUrl: '/images/freshcart.png',
-      imageAlt: {
-        en: 'FreshCart e-commerce product page preview',
-        ar: 'معاينة صفحة منتجات FreshCart',
-      },
-      imagePosition: 'center top',
-      title: {
-        en: 'FreshCart E-commerce',
-        ar: 'FreshCart - متجر إلكتروني',
-      },
-      type: {
-        en: 'Route Academy Final Project',
-        ar: 'مشروع Route Academy النهائي',
-      },
-      description: {
-        en: 'Full Angular e-commerce SPA with product catalog, search, category and brand filters, cart, wishlist, checkout flow, JWT authentication, route guards, Stripe payment, and lazy loading.',
-        ar: 'تطبيق متجر إلكتروني Angular SPA يشمل عرض المنتجات، البحث، فلاتر التصنيفات والماركات، السلة، المفضلة، الدفع، JWT Authentication، Route Guards، Stripe، و Lazy Loading.',
-      },
-      tags: ['Angular 17', 'TypeScript', 'Bootstrap 5', 'REST APIs', 'JWT', 'Stripe'],
-      actions: [
-        { ...liveDemoAction, url: 'https://fresh-cart-roan-seven.vercel.app/' },
-        { ...githubAction, url: 'https://github.com/Abdelrahman-Tamer/FreshCart.git' },
-      ],
-    },
+  ],
+  moreProjects: [
     {
       id: 'doccure',
       imageUrl: '/images/docc.png',
@@ -470,8 +472,6 @@ export const portfolioData = {
         { ...githubAction, url: 'https://github.com/Abdelrahman-Tamer/Doccure.git' },
       ],
     },
-  ],
-  moreProjects: [
     {
       id: 'bookmarker',
       imageUrl: '/images/bookmark.png',

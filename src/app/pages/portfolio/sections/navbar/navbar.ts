@@ -18,7 +18,7 @@ export class Navbar {
   protected readonly menuOpen = signal(false);
   protected readonly scrolled = signal(false);
   protected readonly activeSection = signal('');
-  protected readonly navKeys = ['about', 'projects', 'skills', 'contact'];
+  protected readonly navKeys = ['about', 'services', 'projects', 'skills', 'contact'];
   protected readonly languageToggleText = computed(() => (this.languageService.isArabic() ? 'ع' : 'EN'));
   protected readonly languageToggleLabel = computed(() =>
     this.languageService.isArabic() ? 'Switch language to English' : 'Switch language to Arabic',

@@ -1,6 +1,6 @@
 # Abdelrahman Emam Portfolio
 
-Angular portfolio website for Abdelrahman Emam, a Junior Frontend Developer and Angular Developer based in Cairo, Egypt.
+Angular portfolio website for Abdelrahman Emam, a Frontend Developer and Angular Developer based in Cairo, Egypt.
 
 ## Tech Stack
 

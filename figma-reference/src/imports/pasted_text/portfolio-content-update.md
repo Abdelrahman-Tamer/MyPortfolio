@@ -19,7 +19,7 @@ Arabic: عبدالرحمن إمام
 
 Main Role:
 English:
-Junior Frontend Developer | Angular Developer
+Frontend Developer | Angular Developer
 
 Arabic:
 مطور واجهات أمامية | Angular Developer
@@ -79,13 +79,13 @@ Replace the current stats with:
 
 English:
 1. 5+ Projects Delivered
-2. 1 Live Client Project
+2. 7+ Projects Completed
 3. Backend Contribution
 4. 100% NTI Score
 
 Arabic:
 1. 5+ مشاريع منفذة
-2. 1 مشروع عميل فعلي
+2. 7+ مشاريع مكتملة
 3. مساهمة Backend
 4. 100% درجة NTI
 
@@ -100,13 +100,13 @@ English heading:
 "A frontend developer focused on clean UI and real-world integration."
 
 English paragraph:
-"Junior Frontend Developer specializing in Angular and responsive web development. Experienced in building SPAs with authentication, REST API integration, route guards, reactive forms, Firebase Firestore, and client-side storage. Delivered projects across e-commerce, healthcare, productivity, landing pages, and a live client receipt management system. Also contributed to backend APIs and admin-related features in a graduation project using ASP.NET Core."
+"Frontend Developer specializing in Angular and responsive web development. Experienced in building SPAs with authentication, REST API integration, route guards, reactive forms, Firebase Firestore, and client-side storage. Delivered projects across e-commerce, healthcare, productivity, landing pages, and a live client receipt management system. Also contributed to backend APIs and admin-related features in a graduation project using ASP.NET Core."
 
 Arabic heading:
 "مطور واجهات يركز على الواجهات النظيفة والربط الحقيقي."
 
 Arabic paragraph:
-"مطور واجهات أمامية Junior متخصص في Angular وتطوير الواجهات المتجاوبة. لدي خبرة في بناء Single Page Applications تشمل تسجيل الدخول، ربط REST APIs، Route Guards، Reactive Forms، Firebase Firestore، والتخزين داخل المتصفح. نفذت مشاريع في التجارة الإلكترونية، الرعاية الصحية، الإنتاجية، صفحات الهبوط، بالإضافة إلى مشروع عميل فعلي لإدارة الإيصالات. كما ساهمت في تطوير Backend APIs وبعض أجزاء Admin في مشروع التخرج باستخدام ASP.NET Core."
+"مطور واجهات أمامية متخصص في Angular وتطوير الواجهات المتجاوبة. لدي خبرة في بناء Single Page Applications تشمل تسجيل الدخول، ربط REST APIs، Route Guards، Reactive Forms، Firebase Firestore، والتخزين داخل المتصفح. نفذت مشاريع في التجارة الإلكترونية، الرعاية الصحية، الإنتاجية، صفحات الهبوط، بالإضافة إلى مشروع عميل فعلي لإدارة الإيصالات. كما ساهمت في تطوير Backend APIs وبعض أجزاء Admin في مشروع التخرج باستخدام ASP.NET Core."
 
 ==================================================
 EXPERIENCE TIMELINE

@@ -76,7 +76,7 @@ const T: Record<Lang, any> = {
     aboutHeadingPre: "A frontend developer focused on clean UI and ",
     aboutHeadingAccent: "real-world integration",
     aboutBio: [
-      "Junior Frontend Developer specializing in Angular and responsive web development. Experienced in building SPAs with authentication, REST API integration, route guards, reactive forms, Firebase Firestore, and client-side storage.",
+      "Frontend Developer specializing in Angular and responsive web development. Experienced in building SPAs with authentication, REST API integration, route guards, reactive forms, Firebase Firestore, and client-side storage.",
       "Delivered projects across e-commerce, healthcare, productivity, landing pages, and a live client receipt management system. Also contributed to backend APIs and admin-related features in a graduation project using ASP.NET Core.",
     ],
     certsTitle: "Certifications",
@@ -91,7 +91,7 @@ const T: Record<Lang, any> = {
     ciEmail: "Email", ciPhone: "Phone", ciLinkedin: "LinkedIn", ciGithub: "GitHub", ciLocation: "Location",
     footerCopy: "© 2026 — built with Angular",
     footerName: "Abdelrahman Emam",
-    stats: ["Frontend Projects", "Client Work Delivered", "Angular + REST APIs", "Responsive UI Focus"],
+    stats: ["Frontend Projects", "7+ Projects Completed", "Angular + REST APIs", "Responsive UI Focus"],
     servicesLabel: "Services",
     servicesTitle: "What I offer",
     services: [
@@ -164,7 +164,7 @@ const T: Record<Lang, any> = {
     aboutHeadingPre: "مطور واجهات يركز على الواجهات النظيفة و",
     aboutHeadingAccent: "الربط الحقيقي",
     aboutBio: [
-      "مطور واجهات أمامية Junior متخصص في Angular وتطوير الواجهات المتجاوبة. لدي خبرة في بناء Single Page Applications تشمل تسجيل الدخول، ربط REST APIs، Route Guards، Reactive Forms، Firebase Firestore، والتخزين داخل المتصفح.",
+      "مطور واجهات أمامية متخصص في Angular وتطوير الواجهات المتجاوبة. لدي خبرة في بناء Single Page Applications تشمل تسجيل الدخول، ربط REST APIs، Route Guards، Reactive Forms، Firebase Firestore، والتخزين داخل المتصفح.",
       "نفذت مشاريع في التجارة الإلكترونية، الرعاية الصحية، الإنتاجية، صفحات الهبوط، بالإضافة إلى مشروع عميل فعلي لإدارة الإيصالات. كما ساهمت في تطوير Backend APIs وبعض أجزاء Admin في مشروع التخرج باستخدام ASP.NET Core.",
     ],
     certsTitle: "الشهادات",
@@ -179,7 +179,7 @@ const T: Record<Lang, any> = {
     ciEmail: "البريد", ciPhone: "الهاتف", ciLinkedin: "لينكدإن", ciGithub: "GitHub", ciLocation: "الموقع",
     footerCopy: "© 2026 — تم بناء الموقع باستخدام Angular",
     footerName: "عبدالرحمن إمام",
-    stats: ["مشاريع Frontend", "مشروع عميل فعلي", "Angular + REST APIs", "واجهات متجاوبة"],
+    stats: ["مشاريع Frontend", "7+ مشاريع مكتملة", "Angular + REST APIs", "واجهات متجاوبة"],
     servicesLabel: "الخدمات",
     servicesTitle: "ماذا أقدم؟",
     services: [

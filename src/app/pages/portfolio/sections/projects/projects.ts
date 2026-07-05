@@ -22,7 +22,7 @@ export class Projects {
     return value[this.languageService.language()];
   }
 
-  protected projectIndex(index: number): string {
-    return String(index + 1).padStart(2, '0');
+  protected projectIndex(index: number, offset = 0): string {
+    return String(index + offset + 1).padStart(2, '0');
   }
 }

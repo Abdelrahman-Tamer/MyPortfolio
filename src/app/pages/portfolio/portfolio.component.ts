@@ -16,6 +16,10 @@ import { contactConfig } from '../../core/config/contact.config';
   imports: [Navbar, Hero, Stats, About, Services, Projects, Skills, Contact, Footer],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.css',
+  host: {
+    '(document:pointermove)': 'moveCursorSpot($event)',
+    '(document:mousemove)': 'moveCursorSpot($event)',
+  },
 })
 export class PortfolioComponent {
   private readonly destroyRef = inject(DestroyRef);
@@ -38,9 +42,19 @@ export class PortfolioComponent {
   constructor() {
     afterNextRender(() => {
       this.scrollToInitialSection();
-      this.setupCursorSpot();
       this.setupScrollReveal();
     });
+  }
+
+  protected moveCursorSpot(event: PointerEvent | MouseEvent): void {
+    const spot = this.cursorSpot()?.nativeElement;
+
+    if (!spot) {
+      return;
+    }
+
+    spot.style.transform = `translate3d(${event.clientX - 300}px, ${event.clientY - 300}px, 0)`;
+    spot.classList.add('is-active');
   }
 
   private scrollToInitialSection(): void {
@@ -57,21 +71,6 @@ export class PortfolioComponent {
     }
 
     window.requestAnimationFrame(() => target.scrollIntoView({ block: 'start' }));
-  }
-
-  private setupCursorSpot(): void {
-    const spot = this.cursorSpot()?.nativeElement;
-
-    if (!spot || typeof window === 'undefined') {
-      return;
-    }
-
-    const moveSpot = (event: MouseEvent) => {
-      spot.style.transform = `translate(${event.clientX - 300}px, ${event.clientY - 300}px)`;
-    };
-
-    window.addEventListener('mousemove', moveSpot);
-    this.destroyRef.onDestroy(() => window.removeEventListener('mousemove', moveSpot));
   }
 
   private setupScrollReveal(): void {

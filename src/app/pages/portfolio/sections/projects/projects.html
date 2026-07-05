@@ -36,7 +36,7 @@
       @for (project of moreProjects; track project.id) {
         <app-project-card
           [project]="project"
-          [index]="projectIndex($index)"
+          [index]="projectIndex($index, projects.length)"
           accent="blue"
           [compact]="true"
         />

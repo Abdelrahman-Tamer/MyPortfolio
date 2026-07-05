@@ -21,7 +21,7 @@ export class Stats {
   protected readonly stats = portfolioData.stats;
   protected readonly statVisuals: readonly StatVisual[] = [
     { value: '5+' },
-    { value: '1' },
+    { value: '7+' },
     { icon: 'sparkles' },
     { value: '100%' },
   ];

@@ -19,13 +19,13 @@ Replace the current stats with cleaner, client-focused labels.
 
 English stats:
 1. 5+ Frontend Projects
-2. Client Work Delivered
+2. 7+ Projects Completed
 3. Angular + REST APIs
 4. Responsive UI Focus
 
 Arabic stats:
 1. 5+ مشاريع Frontend
-2. مشروع عميل فعلي
+2. 7+ مشاريع مكتملة
 3. Angular + REST APIs
 4. واجهات متجاوبة
 

@@ -47,7 +47,7 @@
   --text: #f8fafc;
   --muted: #94a3b8;
   --strong: #cbd5e1;
-  --faint: #64748b;
+  --faint: #94a3b8;
   --border: #1e2738;
   --accent: #60a5fa;
   --accent-purple: #a78bfa;
@@ -599,7 +599,7 @@ html[dir="rtl"] .ticker-track {
 }
 
 .section-kicker span {
-  color: var(--faint);
+  color: var(--muted);
   font-family: monospace;
 }
 
@@ -952,7 +952,7 @@ html[dir="rtl"] .ticker-track {
   align-items: center;
   gap: 8px;
   margin-top: 48px;
-  color: var(--faint);
+  color: var(--strong);
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1040,7 +1040,7 @@ html[dir="rtl"] .ticker-track {
 
 .code-comment {
   margin-bottom: 12px;
-  color: #64748b;
+  color: #94a3b8;
 }
 
 .code-indent {
@@ -1982,7 +1982,7 @@ html[dir="rtl"] .marquee-track {
   }
 }
 
-@media (hover: none), (pointer: coarse) {
+@media (hover: none) and (pointer: coarse) {
   .cta:hover,
   .primary-cta:hover,
   .secondary-cta:hover,
@@ -2010,7 +2010,7 @@ html[dir="rtl"] .marquee-track {
   }
 }
 
-@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+@media (hover: none) and (pointer: coarse), (prefers-reduced-motion: reduce) {
   .timeline-item,
   .timeline-item:hover {
     transform: none;
@@ -2112,6 +2112,7 @@ html[dir="rtl"] .marquee-track {
   .project-actions {
     flex-direction: column;
   }
+
 }
 
 @media (max-width: 360px) {
