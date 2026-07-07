@@ -98,8 +98,8 @@ export const portfolioData = {
       ar: 'يمكنك الاعتماد علي في واجهات متجاوبة، تواصل واضح، وتعامل محترم مع تفاصيل المشاريع الخاصة.',
     },
     primaryCta: {
-      en: 'View Client Work',
-      ar: 'شاهد أعمال العملاء',
+      en: 'View Projects',
+      ar: 'شاهد المشاريع',
     },
     secondaryCta: {
       en: 'Let’s Work Together',
