@@ -1,4 +1,5 @@
-import { afterNextRender, Component, computed, DestroyRef, inject, signal } from '@angular/core';
+import { afterNextRender, Component, computed, DestroyRef, ElementRef, inject, signal, viewChild } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import { portfolioData } from '../../../../core/data/portfolio.data';
 import { LanguageService } from '../../../../core/services/language.service';
 import { ThemeService } from '../../../../core/services/theme.service';
@@ -7,12 +8,15 @@ import { IconComponent } from '../../../../shared/components/icon/icon';
 
 @Component({
   selector: 'app-navbar',
-  imports: [IconComponent],
+  imports: [IconComponent, RouterLink],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
 export class Navbar {
   private readonly destroyRef = inject(DestroyRef);
+  private readonly router = inject(Router);
+  private readonly burgerButton = viewChild<ElementRef<HTMLButtonElement>>('burgerButton');
+  private readonly mobilePanel = viewChild<ElementRef<HTMLElement>>('mobilePanel');
   protected readonly languageService = inject(LanguageService);
   protected readonly themeService = inject(ThemeService);
   protected readonly menuOpen = signal(false);
@@ -22,6 +26,17 @@ export class Navbar {
   protected readonly languageToggleText = computed(() => (this.languageService.isArabic() ? 'ع' : 'EN'));
   protected readonly languageToggleLabel = computed(() =>
     this.languageService.isArabic() ? 'Switch language to English' : 'Switch language to Arabic',
+  );
+  protected readonly cvLabel = computed(() => (this.languageService.isArabic() ? 'السيرة الذاتية' : 'CV'));
+  protected readonly hireMeLabel = computed(() => (this.languageService.isArabic() ? 'وظفني' : 'Hire Me'));
+  protected readonly menuLabel = computed(() =>
+    this.menuOpen()
+      ? this.languageService.isArabic()
+        ? 'إغلاق القائمة'
+        : 'Close menu'
+      : this.languageService.isArabic()
+        ? 'فتح القائمة'
+        : 'Open menu',
   );
 
   protected readonly navLinks = computed(() =>
@@ -74,33 +89,78 @@ export class Navbar {
     this.languageService.toggleLanguage();
   }
 
-  protected scrollTo(section: string, event?: Event): void {
-    event?.preventDefault();
+  protected navigateToSection(section: string): void {
     this.menuOpen.set(false);
 
-    if (typeof document === 'undefined') {
-      return;
-    }
-
-    const target = document.getElementById(section);
-
-    if (!target) {
-      return;
-    }
-
-    if (typeof window !== 'undefined') {
-      const path = section === 'home' ? '/' : `/${section}`;
-
-      window.history.pushState(null, '', path);
-      const top = target.getBoundingClientRect().top + window.scrollY;
-      window.requestAnimationFrame(() => window.scrollTo({ top, behavior: 'smooth' }));
-      return;
-    }
-
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    void this.router.navigate(['/'], {
+      fragment: section === 'home' ? undefined : section,
+    });
   }
 
   protected toggleMenu(): void {
-    this.menuOpen.update((open) => !open);
+    if (this.menuOpen()) {
+      this.closeMenu();
+      return;
+    }
+
+    this.menuOpen.set(true);
+    this.focusFirstMobileLink();
+  }
+
+  protected closeMenu(restoreFocus = true): void {
+    this.menuOpen.set(false);
+
+    if (restoreFocus) {
+      this.burgerButton()?.nativeElement.focus();
+    }
+  }
+
+  protected trapMobileMenuFocus(event: Event): void {
+    if (!(event instanceof KeyboardEvent)) {
+      return;
+    }
+
+    const focusableElements = this.mobileFocusableElements();
+
+    if (!focusableElements.length) {
+      event.preventDefault();
+      return;
+    }
+
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    if (event.shiftKey && document.activeElement === firstElement) {
+      event.preventDefault();
+      lastElement.focus();
+      return;
+    }
+
+    if (!event.shiftKey && document.activeElement === lastElement) {
+      event.preventDefault();
+      firstElement.focus();
+    }
+  }
+
+  private focusFirstMobileLink(): void {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    window.requestAnimationFrame(() => this.mobileFocusableElements()[0]?.focus());
+  }
+
+  private mobileFocusableElements(): readonly HTMLElement[] {
+    const panel = this.mobilePanel()?.nativeElement;
+
+    if (!panel) {
+      return [];
+    }
+
+    return Array.from(
+      panel.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      ),
+    ).filter((element) => !element.hasAttribute('disabled') && element.tabIndex !== -1);
   }
 }

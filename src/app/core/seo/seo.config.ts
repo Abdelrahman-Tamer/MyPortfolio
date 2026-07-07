@@ -7,20 +7,21 @@ export const AUTHOR_EMAIL = 'abdelrahmanacc84@gmail.com';
 export const AUTHOR_JOB_TITLE = 'Angular Frontend Developer';
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/abd-el-rahman-emam';
 export const GITHUB_URL = 'https://github.com/Abdelrahman-Tamer';
-export const SOCIAL_IMAGE_PATH = '/og-image.png';
+export const SOCIAL_IMAGE_PATH = '/og-image.jpg';
+export const SOCIAL_IMAGE_TYPE = 'image/jpeg';
 export const LOGO_PATH = '/android-chrome-512x512.png';
 export const THEME_COLOR = '#0b0e14';
 export const BACKGROUND_COLOR = '#0b0e14';
 
 const baseKeywords =
-  'Angular Developer, Frontend Developer, TypeScript, Responsive Web Design, REST API Integration, Cairo Developer, JavaScript Developer';
+  'Angular Developer, Frontend Developer, TypeScript, Responsive Web Design, REST API Integration, Cairo Developer, Arabic RTL Developer';
 
 const socialImage = `${SITE_URL}${SOCIAL_IMAGE_PATH}`;
 
 export const DEFAULT_SEO: SeoRouteData = {
-  title: 'Abdelrahman Emam | Angular Frontend Developer',
+  title: 'Abdelrahman Emam | Angular Frontend Developer for Client-Ready Web Apps',
   description:
-    'Angular Frontend Developer in Cairo building responsive web interfaces, REST API integrations, and client-ready projects.',
+    'Cairo-based Angular Frontend Developer building responsive, accessible, API-connected web interfaces for client projects and real product workflows.',
   keywords: baseKeywords,
   path: '/',
   image: socialImage,
@@ -33,7 +34,7 @@ export const ROUTE_SEO = {
   about: {
     title: 'About Abdelrahman Emam | Angular Frontend Developer',
     description:
-      'Learn about Abdelrahman Emam, a Cairo-based Angular Frontend Developer focused on clean UI, responsive interfaces, and real-world API integration.',
+      'Learn how Abdelrahman Emam builds polished Angular interfaces, responsive dashboards, and API-connected product experiences with clear communication.',
     keywords: `${baseKeywords}, About Abdelrahman Emam, Angular Portfolio`,
     path: '/about',
     image: socialImage,
@@ -51,9 +52,9 @@ export const ROUTE_SEO = {
     robots: DEFAULT_SEO.robots,
   },
   projects: {
-    title: 'Projects | Abdelrahman Emam Angular Portfolio',
+    title: 'Client Work and Projects | Abdelrahman Emam Angular Portfolio',
     description:
-      'Explore Abdelrahman Emam frontend projects across e-commerce, healthcare, tourism, receipt management, landing pages, and JavaScript tools.',
+      'Explore Receipta Pro, NileGuide, FreshCart, Doccure, and selected frontend projects with problem, solution, and outcome context.',
     keywords: `${baseKeywords}, Angular Projects, Frontend Portfolio, Web Projects`,
     path: '/projects',
     image: socialImage,
@@ -76,6 +77,16 @@ export const ROUTE_SEO = {
       'Contact Abdelrahman Emam for Angular frontend development, responsive UI work, REST API integrations, and client-ready web projects.',
     keywords: `${baseKeywords}, Hire Angular Developer, Contact Frontend Developer`,
     path: '/contact',
+    image: socialImage,
+    imageAlt: DEFAULT_SEO.imageAlt,
+    robots: DEFAULT_SEO.robots,
+  },
+  cv: {
+    title: 'CV | Abdelrahman Emam Frontend and Angular Developer',
+    description:
+      'View and download Abdelrahman Emam frontend developer CV, including Angular experience, projects, skills, education, and contact details.',
+    keywords: `${baseKeywords}, Abdelrahman Emam CV, Frontend Developer Resume, Angular Developer CV`,
+    path: '/cv',
     image: socialImage,
     imageAlt: DEFAULT_SEO.imageAlt,
     robots: DEFAULT_SEO.robots,

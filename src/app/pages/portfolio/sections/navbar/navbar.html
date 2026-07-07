@@ -1,17 +1,18 @@
-<nav class="figma-nav" [class.is-solid]="scrolled() || menuOpen()">
+<nav class="figma-nav" aria-label="Primary navigation" [class.is-solid]="scrolled() || menuOpen()">
   <div class="container figma-nav-inner">
-    <button type="button" class="figma-logo" aria-label="Home" (click)="scrollTo('home')">
+    <button type="button" class="figma-logo" aria-label="Home" dir="ltr" (click)="navigateToSection('home')">
       AE<span>.</span>
     </button>
 
     <div class="nav-links">
       @for (link of navLinks(); track link.id) {
         <a
-          [href]="link.href"
+          routerLink="/"
+          [fragment]="link.id"
           class="figma-nav-link"
           [class.is-active]="activeSection() === link.id"
           [attr.aria-current]="activeSection() === link.id ? 'location' : null"
-          (click)="scrollTo(link.id, $event)"
+          (click)="closeMenu()"
         >
           {{ text(link.label) }}
           @if (activeSection() === link.id) {
@@ -22,6 +23,12 @@
     </div>
 
     <div class="figma-nav-actions">
+      <a class="nav-cv-link" routerLink="/cv">
+        {{ cvLabel() }}
+      </a>
+      <a class="nav-hire-link" routerLink="/" fragment="contact" (click)="closeMenu()">
+        {{ hireMeLabel() }}
+      </a>
       <span class="nav-divider" aria-hidden="true"></span>
       <button
         type="button"
@@ -46,11 +53,12 @@
       </button>
 
       <button
+        #burgerButton
         type="button"
         class="nav-burger"
         [attr.aria-expanded]="menuOpen()"
         aria-controls="portfolio-mobile-menu"
-        aria-label="Menu"
+        [attr.aria-label]="menuLabel()"
         (click)="toggleMenu()"
       >
         @if (menuOpen()) {
@@ -63,19 +71,33 @@
   </div>
 
   @if (menuOpen()) {
-    <div class="nav-mobile-panel" id="portfolio-mobile-menu">
+    <div
+      #mobilePanel
+      class="nav-mobile-panel"
+      id="portfolio-mobile-menu"
+      aria-label="Mobile navigation"
+      (keydown.escape)="closeMenu()"
+      (keydown.tab)="trapMobileMenuFocus($event)"
+    >
       <div class="container nav-mobile-inner">
         @for (link of navLinks(); track link.id) {
           <a
-            [href]="link.href"
+            routerLink="/"
+            [fragment]="link.id"
             class="mobile-nav-link"
             [class.is-active]="activeSection() === link.id"
             [attr.aria-current]="activeSection() === link.id ? 'location' : null"
-            (click)="scrollTo(link.id, $event)"
+            (click)="closeMenu(false)"
           >
             {{ text(link.label) }}
           </a>
         }
+        <a class="mobile-cv-link" routerLink="/cv" (click)="closeMenu(false)">
+          {{ cvLabel() }}
+        </a>
+        <a class="mobile-hire-link" routerLink="/" fragment="contact" (click)="closeMenu(false)">
+          {{ hireMeLabel() }}
+        </a>
       </div>
     </div>
   }

@@ -13,26 +13,6 @@
     color var(--duration-normal) var(--ease-out);
 }
 
-.cursor-spot {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 18%, transparent) 0%, transparent 68%);
-  opacity: 0.78;
-  pointer-events: none;
-  transform: translate3d(calc(50vw - 300px), calc(50vh - 300px), 0);
-  transition: opacity var(--duration-normal) var(--ease-out);
-  will-change: transform;
-}
-
-.cursor-spot.is-active {
-  opacity: 1;
-}
-
 .portfolio-grid-bg {
   position: fixed;
   inset: 0;
@@ -48,6 +28,25 @@
 .portfolio-content {
   position: relative;
   z-index: 2;
+}
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 100;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 800;
+  padding: 10px 14px;
+  text-decoration: none;
+  transform: translateY(-140%);
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
 }
 
 .whatsapp-float {
@@ -94,10 +93,10 @@
   transform: scale(0.97);
 }
 
-@media (max-width: 768px) {
-  .cursor-spot {
-    display: none;
-  }
+.whatsapp-float.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
 }
 
 @media (max-width: 560px) {

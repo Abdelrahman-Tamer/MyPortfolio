@@ -31,8 +31,9 @@
       <img
         class="project-image"
         [ngSrc]="project().imageUrl!"
-        width="1672"
-        height="941"
+        width="1280"
+        height="720"
+        [sizes]="imageSizes()"
         [alt]="imageAlt()"
         [style.object-position]="imagePosition()"
         loading="lazy"
@@ -267,7 +268,7 @@
             type="button"
             disabled
             aria-disabled="true"
-            [attr.aria-label]="actionAriaLabel(action) + ' unavailable'"
+            [attr.aria-label]="unavailableActionAriaLabel(action)"
           >
             <app-icon [name]="actionIcon(action)" [size]="13" />
             {{ actionLabel(action) }}
@@ -293,7 +294,7 @@
             type="button"
             disabled
             aria-disabled="true"
-            [attr.aria-label]="actionAriaLabel(action) + ' unavailable'"
+            [attr.aria-label]="unavailableActionAriaLabel(action)"
           >
             <app-icon [name]="actionIcon(action)" [size]="13" />
             {{ actionLabel(action) }}

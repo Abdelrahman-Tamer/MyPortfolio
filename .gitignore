@@ -38,6 +38,11 @@ yarn-error.log
 testem.log
 /typings
 __screenshots__/
+/.codex/
+/.playwright-cli/
+/.playwright-mcp/
+/output/
+opencode.json
 
 # System files
 .DS_Store

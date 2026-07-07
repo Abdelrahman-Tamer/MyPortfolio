@@ -1,29 +1,20 @@
 import { Component, inject } from '@angular/core';
 import { portfolioData } from '../../../../core/data/portfolio.data';
 import { LanguageService } from '../../../../core/services/language.service';
-import { LocalizedText } from '../../../../core/models/portfolio.models';
+import type { LocalizedText } from '../../../../core/models/portfolio.models';
 import { IconComponent, type IconName } from '../../../../shared/components/icon/icon';
 
-interface StatVisual {
-  readonly icon: IconName;
-}
-
 @Component({
-  selector: 'app-stats',
+  selector: 'app-process',
   imports: [IconComponent],
-  templateUrl: './stats.html',
-  styleUrl: './stats.css',
+  templateUrl: './process.html',
+  styleUrl: './process.css',
 })
-export class Stats {
+export class Process {
   private readonly languageService = inject(LanguageService);
 
-  protected readonly stats = portfolioData.stats;
-  protected readonly statVisuals: readonly StatVisual[] = [
-    { icon: 'briefcase' },
-    { icon: 'code' },
-    { icon: 'monitor' },
-    { icon: 'globe' },
-  ];
+  protected readonly data = portfolioData;
+  protected readonly stepIcons: readonly IconName[] = ['globe', 'palette', 'code', 'check'];
 
   protected text(value: LocalizedText): string {
     return value[this.languageService.language()];

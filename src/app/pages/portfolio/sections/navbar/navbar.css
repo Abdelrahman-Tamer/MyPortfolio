@@ -48,7 +48,7 @@
   font-family: "Space Grotesk", sans-serif;
   font-size: 18px;
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   padding: 0;
 }
 
@@ -197,7 +197,7 @@
   color: var(--accent);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 956px) {
   .figma-nav {
     inset-block-start: 12px;
   }
@@ -222,5 +222,12 @@
 
   .nav-burger {
     display: flex;
+  }
+
+  .language-orb-button,
+  .theme-icon-button,
+  .nav-burger {
+    width: 44px;
+    height: 44px;
   }
 }

@@ -30,6 +30,9 @@ export const portfolioData = {
     },
     email: 'abdelrahmanacc84@gmail.com',
     phone: '+20 1122615864',
+    resumeUrl: '/cv',
+    resumePdfUrl: '/Abdelrahman-Emam-CV.pdf',
+    resumeAvailable: true,
   },
   navLinks: [
     {
@@ -83,24 +86,24 @@ export const portfolioData = {
   ],
   hero: {
     badge: {
-      en: 'Available for work',
-      ar: 'متاح للعمل',
+      en: 'Available for client projects',
+      ar: 'متاح لمشاريع العملاء',
     },
     description: {
-      en: 'I build responsive, user-focused web interfaces using Angular, TypeScript, REST APIs, and modern frontend tools.',
-      ar: 'أبني واجهات ويب متجاوبة وسهلة الاستخدام باستخدام Angular و TypeScript وربط REST APIs وأدوات الويب الحديثة.',
+      en: 'I build fast, polished Angular interfaces for businesses that need reliable frontend work, clean UX, and API-connected workflows.',
+      ar: 'أبني واجهات Angular سريعة ومصقولة للشركات التي تحتاج Frontend موثوقًا وتجربة استخدام واضحة وربطًا عمليًا بالبيانات.',
     },
     clientLine: {
-      en: 'I help turn ideas into clean, fast, and responsive web interfaces that work smoothly across all devices.',
-      ar: 'أساعدك في تحويل فكرتك إلى واجهة ويب نظيفة، سريعة، ومتجاوبة تعمل بسلاسة على كل الأجهزة.',
+      en: 'You can trust me with responsive UI, clear communication, and careful handling of private client work.',
+      ar: 'يمكنك الاعتماد علي في واجهات متجاوبة، تواصل واضح، وتعامل محترم مع تفاصيل المشاريع الخاصة.',
     },
     primaryCta: {
-      en: 'View Projects',
-      ar: 'شاهد المشاريع',
+      en: 'View Client Work',
+      ar: 'شاهد أعمال العملاء',
     },
     secondaryCta: {
-      en: 'Message me now',
-      ar: 'راسلني الآن',
+      en: 'Let’s Work Together',
+      ar: 'لنبدأ العمل معًا',
     },
     scrollLabel: {
       en: 'Scroll to explore',
@@ -121,31 +124,47 @@ export const portfolioData = {
   ],
   stats: [
     {
+      id: 'real-client-project',
+      label: {
+        en: 'Live Client Work',
+        ar: 'عمل عميل فعلي',
+      },
+      detail: {
+        en: 'Delivered reliable web apps with clean UX, strong performance, and maintainable code.',
+        ar: 'أنفذ تطبيقات ويب موثوقة بتجربة واضحة، أداء قوي، وكود قابل للتطوير.',
+      },
+    },
+    {
+      id: 'angular-experience',
+      label: {
+        en: 'Angular Experience',
+        ar: 'خبرة Angular',
+      },
+      detail: {
+        en: 'SPAs with routing, auth flows, forms, and API integration.',
+        ar: 'تطبيقات SPA تشمل Routing وتسجيل دخول ونماذج وربط APIs.',
+      },
+    },
+    {
       id: 'frontend-projects',
       label: {
-        en: '5+ Frontend Projects',
-        ar: '5+ مشاريع Frontend',
+        en: '5+ Projects Shipped',
+        ar: '5+ مشاريع منفذة',
+      },
+      detail: {
+        en: 'E-commerce, healthcare, tourism, productivity, and landing pages.',
+        ar: 'تجارة إلكترونية، رعاية صحية، سياحة، إنتاجية، وصفحات هبوط.',
       },
     },
     {
-      id: 'projects-completed',
+      id: 'bilingual-en-ar',
       label: {
-        en: '7+ Projects Completed',
-        ar: '7+ مشاريع مكتملة',
+        en: 'Bilingual EN/AR',
+        ar: 'ثنائي اللغة EN/AR',
       },
-    },
-    {
-      id: 'angular-rest-apis',
-      label: {
-        en: 'Angular + REST APIs',
-        ar: 'Angular + REST APIs',
-      },
-    },
-    {
-      id: 'responsive-ui',
-      label: {
-        en: 'Responsive UI Focus',
-        ar: 'واجهات متجاوبة',
+      detail: {
+        en: 'Responsive LTR and RTL interfaces for English and Arabic users.',
+        ar: 'واجهات متجاوبة تدعم LTR و RTL للمستخدمين بالعربية والإنجليزية.',
       },
     },
   ],
@@ -178,12 +197,22 @@ export const portfolioData = {
     },
     moreProjects: {
       label: {
-        en: 'More projects',
-        ar: 'مشاريع إضافية',
+        en: 'More Projects',
+        ar: 'أعمال مبكرة',
       },
       title: {
         en: 'Smaller practice projects focused on JavaScript, landing pages, and responsive layouts.',
-        ar: 'مشاريع تدريبية أصغر تركز على JavaScript، صفحات الهبوط، والتصميم المتجاوب.',
+        ar: 'مشاريع تدريبية أصغر تظهر بشكل ثانوي بعد أعمال العميل ومشاريع Angular.',
+      },
+    },
+    testimonials: {
+      label: {
+        en: 'Testimonials',
+        ar: 'آراء العملاء',
+      },
+      title: {
+        en: 'Client feedback will be added only after permission.',
+        ar: 'سيتم إضافة آراء العملاء بعد الحصول على إذن فقط.',
       },
     },
     skills: {
@@ -196,6 +225,16 @@ export const portfolioData = {
         ar: 'التقنيات والأدوات',
       },
     },
+    process: {
+      label: {
+        en: 'How I Work',
+        ar: 'طريقة عملي',
+      },
+      title: {
+        en: 'A clear workflow from first message to delivery.',
+        ar: 'خطوات واضحة من أول تواصل حتى التسليم.',
+      },
+    },
     contact: {
       label: {
         en: 'Contact',
@@ -205,12 +244,12 @@ export const portfolioData = {
   },
   about: {
     heading: {
-      en: 'A frontend developer focused on clean UI and real-world integration.',
-      ar: 'مطور واجهات يركز على الواجهات النظيفة والربط الحقيقي.',
+      en: 'A frontend developer clients can rely on for polished Angular interfaces.',
+      ar: 'مطور واجهات يمكن للعملاء الاعتماد عليه لبناء واجهات Angular مصقولة.',
     },
     paragraph: {
-      en: 'Frontend Developer specializing in Angular and responsive web development. Experienced in building SPAs with authentication, REST API integration, route guards, reactive forms, Firebase Firestore, and client-side storage. Delivered projects across e-commerce, healthcare, productivity, landing pages, and a live client receipt management system. Also contributed to backend APIs and admin-related features in a graduation project using ASP.NET Core.',
-      ar: 'مطور واجهات أمامية متخصص في Angular وتطوير الواجهات المتجاوبة. لدي خبرة في بناء Single Page Applications تشمل تسجيل الدخول، ربط REST APIs، Route Guards، Reactive Forms، Firebase Firestore، والتخزين داخل المتصفح. نفذت مشاريع في التجارة الإلكترونية، الرعاية الصحية، الإنتاجية، صفحات الهبوط، بالإضافة إلى مشروع عميل فعلي لإدارة الإيصالات. كما ساهمت في تطوير Backend APIs وبعض أجزاء Admin في مشروع التخرج باستخدام ASP.NET Core.',
+      en: 'I am Abdelrahman Emam, a Cairo-based Frontend and Angular Developer. I build responsive web interfaces, dashboards, and API-connected product experiences. Clients enjoy working with me because I keep the UI clear, communicate honestly, and respect project details and confidentiality.',
+      ar: 'أنا عبدالرحمن إمام، مطور Frontend و Angular من القاهرة. أبني واجهات ويب متجاوبة ولوحات تحكم وتجارب منتجات مرتبطة بالبيانات. يفضل العملاء العمل معي لأنني أحافظ على وضوح الواجهة، أتواصل بصدق، وأحترم تفاصيل وسرية المشروع.',
     },
   },
   timeline: [
@@ -339,34 +378,8 @@ export const portfolioData = {
   ],
   featuredProjects: [
     {
-      id: 'freshcart',
-      imageUrl: '/images/freshcart.png',
-      imageAlt: {
-        en: 'FreshCart e-commerce product page preview',
-        ar: 'معاينة صفحة منتجات FreshCart',
-      },
-      imagePosition: 'center top',
-      title: {
-        en: 'FreshCart E-commerce',
-        ar: 'FreshCart - متجر إلكتروني',
-      },
-      type: {
-        en: 'Route Academy Final Project',
-        ar: 'مشروع Route Academy النهائي',
-      },
-      description: {
-        en: 'Full Angular e-commerce SPA with product catalog, search, category and brand filters, cart, wishlist, checkout flow, JWT authentication, route guards, Stripe payment, and lazy loading.',
-        ar: 'تطبيق متجر إلكتروني Angular SPA يشمل عرض المنتجات، البحث، فلاتر التصنيفات والماركات، السلة، المفضلة، الدفع، JWT Authentication، Route Guards، Stripe، و Lazy Loading.',
-      },
-      tags: ['Angular 17', 'TypeScript', 'Bootstrap 5', 'REST APIs', 'JWT', 'Stripe'],
-      actions: [
-        { ...liveDemoAction, url: 'https://fresh-cart-roan-seven.vercel.app/' },
-        { ...githubAction, url: 'https://github.com/Abdelrahman-Tamer/FreshCart.git' },
-      ],
-    },
-    {
       id: 'receipta-pro',
-      imageUrl: '/images/rec.png',
+      imageUrl: '/images/rec.webp',
       imageAlt: {
         en: 'Receipta Pro receipt management dashboard preview',
         ar: 'معاينة لوحة إدارة إيصالات Receipta Pro',
@@ -381,8 +394,20 @@ export const portfolioData = {
         ar: 'مشروع عميل خاص - Waad Rent Cars',
       },
       description: {
-        en: 'Arabic receipt management system for Waad Rent Cars with create, edit, delete, search, payment status tracking, Firebase cloud sync, offline fallback, and PDF export.',
-        ar: 'نظام عربي لإدارة إيصالات Waad Rent Cars يشمل إنشاء وتعديل وحذف وبحث وتتبع حالة الدفع، مع مزامنة Firebase، تخزين Offline، وتصدير PDF.',
+        en: 'Private Arabic receipt management system built for a real car rental client.',
+        ar: 'نظام عربي خاص لإدارة الإيصالات تم تنفيذه لعميل حقيقي في مجال تأجير السيارات.',
+      },
+      problem: {
+        en: 'The client needed searchable Arabic receipts, payment status tracking, and printable documents in one place.',
+        ar: 'كان العميل يحتاج إدارة إيصالات عربية قابلة للبحث مع تتبع حالة الدفع وإمكانية الطباعة من مكان واحد.',
+      },
+      solution: {
+        en: 'Built create, edit, delete, search, Firebase cloud sync, offline fallback, and PDF export workflows.',
+        ar: 'نفذت إنشاء وتعديل وحذف وبحث ومزامنة Firebase وتخزين Offline وتصدير PDF.',
+      },
+      outcome: {
+        en: 'The business can manage receipts through a focused internal tool while the code and demo remain private.',
+        ar: 'أصبح لدى النشاط أداة داخلية مركزة لإدارة الإيصالات مع الحفاظ على خصوصية الكود والعرض.',
       },
       tags: ['HTML5', 'CSS3', 'JavaScript ES6+', 'Firebase', 'jsPDF', 'html2canvas'],
       actions: [
@@ -408,7 +433,7 @@ export const portfolioData = {
     },
     {
       id: 'nileguide',
-      imageUrl: '/images/nileguide.png',
+      imageUrl: '/images/nileguide.webp',
       imageAlt: {
         en: 'NileGuide tourism platform interface preview',
         ar: 'معاينة واجهة منصة NileGuide السياحية',
@@ -423,8 +448,20 @@ export const portfolioData = {
         ar: 'مشروع تخرج | مساهم في Backend و Frontend',
       },
       description: {
-        en: 'Graduation project for tourism activity discovery and trip planning. Contributed to backend APIs and frontend features including authentication flow, activity management, reports, profile integration, admin-related pages, and API integration.',
-        ar: 'مشروع تخرج لاكتشاف الأنشطة السياحية وتنظيم الرحلات. ساهمت في تطوير Backend APIs وبعض أجزاء Frontend مثل Authentication flow، إدارة الأنشطة، التقارير، ربط البروفايل، صفحات مرتبطة بالـ Admin، وربط الواجهات بالـ APIs.',
+        en: 'Graduation project for tourism activity discovery and trip planning, presented accurately as contributor work.',
+        ar: 'مشروع تخرج لاكتشاف الأنشطة السياحية وتنظيم الرحلات، مع توضيح دوري كمساهم في المشروع.',
+      },
+      problem: {
+        en: 'The team needed connected discovery, planning, profile, reporting, and admin-related flows.',
+        ar: 'احتاج الفريق إلى ربط تدفقات الاكتشاف والتخطيط والبروفايل والتقارير وصفحات مرتبطة بالإدارة.',
+      },
+      solution: {
+        en: 'Contributed backend APIs and frontend features across auth, activity management, reports, profile integration, and API wiring.',
+        ar: 'ساهمت في Backend APIs وأجزاء Frontend تشمل Auth وإدارة الأنشطة والتقارير وربط البروفايل والواجهات بالـ APIs.',
+      },
+      outcome: {
+        en: 'Demonstrates practical API collaboration and Angular integration without presenting the project as solo work.',
+        ar: 'يوضح خبرة عملية في التعاون على APIs وربط Angular بدون تقديم المشروع كعمل فردي.',
       },
       roleLine: {
         en: 'My role: Backend APIs, Reports, Admin features, Auth flow, API integration.',
@@ -440,15 +477,59 @@ export const portfolioData = {
         'JWT',
       ],
       actions: [
-        { ...liveDemoAction, url: 'https://www.nileguide.online/' },
+        {
+          label: {
+            en: 'View Project',
+            ar: 'عرض المشروع',
+          },
+          url: 'https://www.nileguide.online/',
+        },
         { ...githubAction, url: 'https://github.com/Abdelrahman-Tamer/NileGuideAngular.git' },
+      ],
+    },
+    {
+      id: 'freshcart',
+      imageUrl: '/images/freshcart.webp',
+      imageAlt: {
+        en: 'FreshCart e-commerce product page preview',
+        ar: 'معاينة صفحة منتجات FreshCart',
+      },
+      imagePosition: 'center top',
+      title: {
+        en: 'FreshCart E-commerce',
+        ar: 'FreshCart - متجر إلكتروني',
+      },
+      type: {
+        en: 'Route Academy Final Project',
+        ar: 'مشروع Route Academy النهائي',
+      },
+      description: {
+        en: 'Full Angular e-commerce SPA with a complete shopping flow.',
+        ar: 'تطبيق متجر إلكتروني Angular SPA يحتوي على تدفق شراء كامل.',
+      },
+      problem: {
+        en: 'The project needed product discovery, protected user flows, cart actions, and checkout in one SPA.',
+        ar: 'احتاج المشروع إلى اكتشاف المنتجات وتدفقات مستخدم محمية وإجراءات السلة والدفع داخل SPA واحد.',
+      },
+      solution: {
+        en: 'Built catalog, search, filters, cart, wishlist, checkout, JWT authentication, route guards, Stripe, and lazy loading.',
+        ar: 'نفذت عرض المنتجات والبحث والفلاتر والسلة والمفضلة والدفع و JWT Authentication و Route Guards و Stripe و Lazy Loading.',
+      },
+      outcome: {
+        en: 'Shows production-style Angular structure across a realistic e-commerce experience.',
+        ar: 'يعرض هيكلة Angular قريبة من المشاريع العملية داخل تجربة تجارة إلكترونية واقعية.',
+      },
+      tags: ['Angular 22', 'TypeScript', 'Bootstrap 5', 'REST APIs', 'JWT', 'Stripe'],
+      actions: [
+        { ...liveDemoAction, url: 'https://fresh-cart-roan-seven.vercel.app/' },
+        { ...githubAction, url: 'https://github.com/Abdelrahman-Tamer/FreshCart.git' },
       ],
     },
   ],
   moreProjects: [
     {
       id: 'doccure',
-      imageUrl: '/images/docc.png',
+      imageUrl: '/images/docc.webp',
       imageAlt: {
         en: 'Doccure healthcare appointment platform preview',
         ar: 'معاينة منصة مواعيد Doccure الطبية',
@@ -463,8 +544,20 @@ export const portfolioData = {
         ar: 'مشروع NTI النهائي',
       },
       description: {
-        en: 'Multi-page healthcare platform with doctor dashboard, doctor profile, profile settings, appointment sections, patient records, responsive Bootstrap layouts, and Slick Carousel.',
-        ar: 'منصة طبية متعددة الصفحات تشمل Doctor Dashboard، Doctor Profile، Profile Settings، أقسام المواعيد، سجلات المرضى، تصميم متجاوب Bootstrap، و Slick Carousel.',
+        en: 'Responsive healthcare interface with dashboard, profile, appointments, and patient records.',
+        ar: 'واجهة طبية متجاوبة تشمل Dashboard وبروفايل ومواعيد وسجلات مرضى.',
+      },
+      problem: {
+        en: 'The UI needed several healthcare pages to stay organized and usable across screen sizes.',
+        ar: 'احتاجت الواجهة إلى تنظيم عدة صفحات طبية بشكل واضح وقابل للاستخدام على مختلف الشاشات.',
+      },
+      solution: {
+        en: 'Built doctor dashboard, doctor profile, settings, appointment sections, patient records, Bootstrap layouts, and carousel UI.',
+        ar: 'نفذت Doctor Dashboard و Doctor Profile و Settings وأقسام المواعيد وسجلات المرضى وتصميم Bootstrap و Carousel.',
+      },
+      outcome: {
+        en: 'Demonstrates structured multi-page implementation and responsive UI discipline.',
+        ar: 'يوضح القدرة على تنفيذ واجهات متعددة الصفحات بتنسيق متجاوب ومنظم.',
       },
       tags: ['HTML5', 'CSS3', 'Bootstrap 5', 'jQuery', 'Font Awesome'],
       actions: [
@@ -474,7 +567,7 @@ export const portfolioData = {
     },
     {
       id: 'bookmarker',
-      imageUrl: '/images/bookmark.png',
+      imageUrl: '/images/bookmark.webp',
       imageAlt: {
         en: 'Bookmarker link manager interface preview',
         ar: 'معاينة واجهة مدير روابط Bookmarker',
@@ -496,7 +589,7 @@ export const portfolioData = {
     },
     {
       id: 'luxestate',
-      imageUrl: '/images/luxestate.png',
+      imageUrl: '/images/luxestate.webp',
       imageAlt: {
         en: 'Luxestate real estate landing page preview',
         ar: 'معاينة صفحة عقارات Luxestate',
@@ -518,7 +611,7 @@ export const portfolioData = {
     },
     {
       id: 'axit',
-      imageUrl: '/images/axit.png',
+      imageUrl: '/images/axit.webp',
       imageAlt: {
         en: 'Axit landing page template preview',
         ar: 'معاينة صفحة هبوط Axit',
@@ -539,6 +632,7 @@ export const portfolioData = {
       ],
     },
   ],
+  testimonials: [],
   skills: [
     {
       id: 'frontend',
@@ -581,12 +675,58 @@ export const portfolioData = {
       items: ['Git', 'GitHub', 'npm', 'Postman', 'Chrome DevTools', 'localStorage', 'RegEx'],
     },
   ],
+  processSteps: [
+    {
+      id: 'discovery',
+      title: {
+        en: 'Discovery',
+        ar: 'الاكتشاف',
+      },
+      description: {
+        en: 'Clarify the goal, audience, scope, existing assets, and what success should look like.',
+        ar: 'توضيح الهدف والجمهور والنطاق والمواد المتاحة وشكل النجاح المطلوب.',
+      },
+    },
+    {
+      id: 'planning-ui',
+      title: {
+        en: 'Planning & UI',
+        ar: 'التخطيط والواجهة',
+      },
+      description: {
+        en: 'Map the key screens, content structure, responsive behavior, and interaction states before building.',
+        ar: 'تحديد الشاشات الأساسية وهيكل المحتوى والاستجابة وحالات التفاعل قبل التنفيذ.',
+      },
+    },
+    {
+      id: 'development',
+      title: {
+        en: 'Development',
+        ar: 'التطوير',
+      },
+      description: {
+        en: 'Build clean, accessible frontend code with clear components, real data flows, and careful testing.',
+        ar: 'تنفيذ كود Frontend نظيف وسهل الوصول بمكونات واضحة وتدفقات بيانات حقيقية واختبار دقيق.',
+      },
+    },
+    {
+      id: 'delivery-support',
+      title: {
+        en: 'Delivery & Support',
+        ar: 'التسليم والدعم',
+      },
+      description: {
+        en: 'Review the finished work, handle feedback, document what matters, and support final handoff.',
+        ar: 'مراجعة العمل النهائي وتنفيذ الملاحظات وتوثيق المهم ودعم التسليم النهائي.',
+      },
+    },
+  ],
   certifications: [
     {
       id: 'nti-web-designer',
       title: {
-        en: 'NTI Web Designer - Score 100%',
-        ar: 'NTI Web Designer - درجة 100%',
+        en: 'NTI Web Designer',
+        ar: 'NTI Web Designer',
       },
     },
     {
@@ -603,8 +743,8 @@ export const portfolioData = {
       ar: 'لنبدأ مشروعك معًا.',
     },
     paragraph: {
-      en: 'Got a website idea or need a professional frontend interface? Send me your project details and I’ll get back to you as soon as possible.',
-      ar: 'عندك فكرة موقع أو محتاج واجهة Frontend احترافية؟ ابعتلي تفاصيل مشروعك وهرد عليك في أقرب وقت.',
+      en: 'Got a website idea or need a professional frontend interface? Send me your project details and I will reply within 24 hours.',
+      ar: 'عندك فكرة موقع أو محتاج واجهة Frontend احترافية؟ ابعت تفاصيل مشروعك وسأرد خلال 24 ساعة.',
     },
     email: 'abdelrahmanacc84@gmail.com',
     phone: '+20 1122615864',

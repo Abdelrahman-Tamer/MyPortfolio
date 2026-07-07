@@ -1,7 +1,4 @@
 <section class="resp-hero container">
-  <div class="hero-orb hero-orb-a" aria-hidden="true"></div>
-  <div class="hero-orb hero-orb-b" aria-hidden="true"></div>
-
   <div class="hero-copy">
     <div class="hero-badge">
       <span class="ping-dot" aria-hidden="true">
@@ -31,14 +28,20 @@
     <p class="hero-description client">{{ text(data.hero.clientLine) }}</p>
 
     <div class="cta-row">
-      <a class="primary-cta" href="#projects">
+      <a class="primary-cta" routerLink="/" fragment="projects">
         {{ text(data.hero.primaryCta) }}
         <app-icon name="arrow-up-right" [size]="16" [class.flip]="isRtl()" />
       </a>
-      <a class="secondary-cta" href="#contact">
+      <a class="secondary-cta" routerLink="/" fragment="contact">
         {{ text(data.hero.secondaryCta) }}
         <app-icon name="mail" [size]="16" />
       </a>
+      @if (data.personal.resumeAvailable) {
+        <a class="resume-cta" [routerLink]="data.personal.resumeUrl">
+          {{ text(resumeLabel) }}
+          <app-icon name="file-text" [size]="16" />
+        </a>
+      }
     </div>
 
     <div class="scroll-cue">
@@ -47,7 +50,7 @@
     </div>
   </div>
 
-  <aside class="hero-code" dir="ltr" aria-label="Developer profile code snippet">
+  <aside class="hero-code" dir="ltr" [attr.aria-label]="text(codeCardAriaLabel)">
     <div class="code-glow" aria-hidden="true"></div>
     <div class="code-dots" aria-hidden="true">
       <span></span>
@@ -56,31 +59,72 @@
     </div>
 
     <div class="code-lines">
-      <div class="code-comment">// profile.ts</div>
-      <div><span class="code-blue">const</span> <span class="code-text">developer</span> = {{ '{' }}</div>
-      @for (entry of codeEntries(); track entry[0]) {
-        <div class="code-indent"><span class="code-purple">{{ entry[0] }}</span>: <span class="code-green">{{ entry[1] }}</span>,</div>
+      <div class="code-comment">{{ text(codeFileComment) }}</div>
+
+      <div class="code-token-line">
+        <span class="code-blue">const</span>&nbsp;<span class="code-text">developer</span>&nbsp;<span class="code-purple">=</span>&nbsp;<span class="code-text">{{ '{' }}</span>
+      </div>
+
+      @for (entry of codeProfileEntries; track entry.key) {
+        <div class="code-indent code-token-line">
+          <span class="code-purple">{{ entry.key }}</span><span class="code-text">:&nbsp;</span>
+          <span class="code-green">'<span class="code-value" [attr.dir]="isRtl() ? 'rtl' : 'ltr'">{{ text(entry.value) }}</span>'</span>
+          <span class="code-text">,</span>
+        </div>
       }
-      <div class="code-indent"><span class="code-purple">available</span>: <span class="code-blue">true</span>,</div>
-      <div>{{ '}' }}</div>
-      <div class="code-stack"><span class="code-blue">const</span> <span class="code-text">stack</span> = [</div>
-      @for (item of stackItems; track item) {
-        <div class="code-indent"><span class="code-green">"{{ item }}"</span>@if (!$last) {<span>,</span>}</div>
-      }
-      <div>]</div>
+
+      <div class="code-indent code-token-line">
+        <span class="code-purple">availableForWork</span><span class="code-text">:&nbsp;</span>
+        <span class="code-blue">true</span>
+        <span class="code-text">,</span>
+      </div>
+
+      <div class="code-text">{{ '}' }}</div>
+
+      <div class="code-stack">
+        <div class="code-token-line">
+          <span class="code-blue">const</span>&nbsp;<span class="code-text">stack</span>&nbsp;<span class="code-purple">=</span>&nbsp;<span class="code-text">[</span>
+        </div>
+
+        @for (tech of codeStack; track tech) {
+          <div class="code-indent code-token-line">
+            <span class="code-green">"{{ tech }}"</span>
+            @if (!$last) {
+              <span class="code-text">,</span>
+            }
+          </div>
+        }
+
+        <div class="code-text">]</div>
+      </div>
     </div>
   </aside>
 </section>
 
-<div class="figma-marquee" aria-label="Featured skills">
+<div class="figma-marquee">
   <div class="marquee-edge marquee-edge-start" aria-hidden="true"></div>
   <div class="marquee-edge marquee-edge-end" aria-hidden="true"></div>
-  <div class="marquee-track">
-    @for (tech of tickerLoop; track $index) {
-      <span>
-        {{ tech }}
-        <app-icon name="sparkles" [size]="12" />
-      </span>
+  <ul class="marquee-sr-list" aria-label="Featured skills">
+    @for (tech of data.featuredSkills; track tech) {
+      <li>{{ tech }}</li>
     }
+  </ul>
+  <div class="marquee-track" aria-hidden="true">
+    <div class="marquee-group">
+      @for (tech of data.featuredSkills; track tech) {
+        <span>
+          {{ tech }}
+          <app-icon name="sparkles" [size]="12" />
+        </span>
+      }
+    </div>
+    <div class="marquee-group">
+      @for (tech of data.featuredSkills; track tech) {
+        <span>
+          {{ tech }}
+          <app-icon name="sparkles" [size]="12" />
+        </span>
+      }
+    </div>
   </div>
 </div>

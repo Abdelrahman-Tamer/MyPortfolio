@@ -25,6 +25,7 @@ export type IconName =
   | 'moon'
   | 'palette'
   | 'phone'
+  | 'quote'
   | 'receipt'
   | 'server'
   | 'shopping-cart'
@@ -159,6 +160,10 @@ export type IconName =
         }
         @case ('phone') {
           <path d="M22 16.9v2.7a2 2 0 0 1-2.2 2 19.5 19.5 0 0 1-8.5-3A19.2 19.2 0 0 1 5.4 12 19.5 19.5 0 0 1 2.4 3.5 2 2 0 0 1 4.4 1.3h2.7a2 2 0 0 1 2 1.7l.4 2.6a2 2 0 0 1-.6 1.8L7.7 8.6a15.5 15.5 0 0 0 7.7 7.7l1.2-1.2a2 2 0 0 1 1.8-.6l2.6.4a2 2 0 0 1 1.7 2Z" />
+        }
+        @case ('quote') {
+          <path d="M8 11H5.5A2.5 2.5 0 0 1 8 8.5V6a5 5 0 0 0-5 5v6h5Z" />
+          <path d="M19 11h-2.5A2.5 2.5 0 0 1 19 8.5V6a5 5 0 0 0-5 5v6h5Z" />
         }
         @case ('receipt') {
           <path d="M5 3v18l2-1.2L9 21l2-1.2 2 1.2 2-1.2 2 1.2 2-1.2V3Z" />

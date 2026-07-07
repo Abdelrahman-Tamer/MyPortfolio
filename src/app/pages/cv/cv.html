@@ -1,0 +1,134 @@
+<div class="cv-page">
+  <a class="skip-link" href="#cv-document">Skip to CV document</a>
+  <nav class="cv-nav" aria-label="CV navigation">
+    <a class="back-link cv-back-link" routerLink="/" [attr.aria-label]="backAriaLabel()">
+      <app-icon name="arrow-up-right" [size]="16" class="back-link-icon" />
+      {{ backLabel() }}
+    </a>
+  </nav>
+
+  <main class="cv-main" aria-label="Abdelrahman Emam CV page">
+    <article id="cv-document" class="cv-document" tabindex="-1" aria-label="Abdelrahman Emam CV" dir="ltr">
+      <header class="resume-header">
+        <h1>Abdelrahman Emam</h1>
+        <p>Frontend Developer | Angular Developer</p>
+
+        <address>
+          @for (item of contactLines; track item.label) {
+            @if (item.href) {
+              <a [href]="item.href" dir="ltr">{{ item.label }}</a>
+            } @else {
+              <span>{{ item.label }}</span>
+            }
+          }
+        </address>
+
+        <div class="resume-socials" aria-label="Profile links">
+          @for (link of socialLinks; track link.href) {
+            <a
+              [href]="link.href"
+              [attr.target]="link.href === '/' ? null : '_blank'"
+              rel="noopener noreferrer"
+              [attr.aria-label]="link.label"
+            >
+              <app-icon [name]="link.icon" [size]="16" />
+            </a>
+          }
+        </div>
+      </header>
+
+      <section class="resume-section" aria-labelledby="summary-heading">
+        <h2 id="summary-heading">Professional Summary</h2>
+        <p>
+          Frontend Developer specializing in Angular and responsive web development. Experienced in building SPAs
+          with authentication, REST API integration, route guards, and reactive forms. Delivered 5+ projects across
+          e-commerce, healthcare, and productivity domains, including a live client project. Seeking a frontend or
+          Angular role to contribute to real-world product teams.
+        </p>
+      </section>
+
+      <section class="resume-section" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Technical Skills</h2>
+        <dl class="resume-skill-list">
+          @for (line of skillLines; track line.category) {
+            <div>
+              <dt>{{ line.category }}:</dt>
+              <dd>{{ line.items }}</dd>
+            </div>
+          }
+        </dl>
+      </section>
+
+      <section class="resume-section" aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Projects</h2>
+        @for (project of projects; track project.title) {
+          <article class="resume-entry">
+            <header>
+              <h3>{{ project.title }}</h3>
+              <p>
+                {{ project.meta }}
+                @if (project.links?.length) {
+                  <span class="resume-link-row">
+                    @for (link of project.links; track link.href) {
+                      <a [href]="link.href" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>
+                    }
+                  </span>
+                }
+              </p>
+            </header>
+            <ul>
+              @for (bullet of project.bullets; track bullet) {
+                <li>{{ bullet }}</li>
+              }
+            </ul>
+          </article>
+        }
+      </section>
+
+      <section class="resume-section" aria-labelledby="experience-heading">
+        <h2 id="experience-heading">Experience</h2>
+        @for (role of experience; track role.title) {
+          <article class="resume-entry">
+            <header class="resume-entry-split">
+              <div>
+                <h3>{{ role.title }}</h3>
+                <p>{{ role.meta }}</p>
+              </div>
+              <time [attr.datetime]="role.dateTime">{{ role.date }}</time>
+            </header>
+            <ul>
+              @for (bullet of role.bullets; track bullet) {
+                <li>{{ bullet }}</li>
+              }
+            </ul>
+          </article>
+        }
+      </section>
+
+      <section class="resume-section" aria-labelledby="education-heading">
+        <h2 id="education-heading">Education</h2>
+        <article class="resume-entry">
+          <h3>B.Sc. Computer and Information Technology | Egyptian E-Learning University (EELU), Cairo, Egypt</h3>
+          <p>
+            Feb 2022 - Jul 2026 | Relevant Coursework: Web Development, Data Structures, Algorithms, Operating Systems,
+            Databases
+          </p>
+        </article>
+      </section>
+
+      <section class="resume-section" aria-labelledby="certifications-heading">
+        <h2 id="certifications-heading">Certifications</h2>
+        <ul>
+          @for (certification of certifications; track certification) {
+            <li>{{ certification }}</li>
+          }
+        </ul>
+      </section>
+
+      <section class="resume-section" aria-labelledby="soft-skills-heading">
+        <h2 id="soft-skills-heading">Soft Skills</h2>
+        <p>{{ softSkills }}</p>
+      </section>
+    </article>
+  </main>
+</div>

@@ -2,23 +2,43 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <title>Abdelrahman Emam | Angular Frontend Developer</title>
+  <title>Abdelrahman Emam | Angular Frontend Developer for Client-Ready Web Apps</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Angular Frontend Developer in Cairo building responsive web interfaces, REST API integrations, and client-ready projects.">
-  <meta name="keywords" content="Angular Developer, Frontend Developer, TypeScript, Responsive Web Design, REST API Integration, Cairo Developer, JavaScript Developer">
+  <meta name="description" content="Cairo-based Angular Frontend Developer building responsive, accessible, API-connected web interfaces for client projects and real product workflows.">
+  <meta name="keywords" content="Angular Developer, Frontend Developer, TypeScript, Responsive Web Design, REST API Integration, Cairo Developer, Arabic RTL Developer">
   <meta name="author" content="Abdelrahman Emam">
   <meta name="application-name" content="Abdelrahman Emam Portfolio">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="language" content="English">
-  <meta name="theme-color" content="#0b0e14">
+  <meta name="theme-color" content="#eef2f9">
+  <script>
+    (() => {
+      try {
+        const theme = localStorage.getItem('portfolio-theme-v2');
+        const language = localStorage.getItem('portfolio-language-v2');
+        const root = document.documentElement;
+
+        root.classList.toggle('dark', theme === 'dark');
+
+        if (language === 'ar') {
+          root.lang = 'ar';
+          root.dir = 'rtl';
+        } else {
+          root.lang = 'en';
+          root.dir = 'ltr';
+        }
+      } catch {
+      }
+    })();
+  </script>
 
   <link rel="canonical" href="https://abdelrahman-emam-portfolio.vercel.app/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=optional">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,23 +49,24 @@
   <meta name="msapplication-TileColor" content="#0b0e14">
   <meta name="msapplication-config" content="/browserconfig.xml">
 
-  <meta property="og:title" content="Abdelrahman Emam | Angular Frontend Developer">
-  <meta property="og:description" content="Angular Frontend Developer in Cairo building responsive web interfaces, REST API integrations, and client-ready projects.">
+  <meta property="og:title" content="Abdelrahman Emam | Angular Frontend Developer for Client-Ready Web Apps">
+  <meta property="og:description" content="Cairo-based Angular Frontend Developer building responsive, accessible, API-connected web interfaces for client projects and real product workflows.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://abdelrahman-emam-portfolio.vercel.app/">
-  <meta property="og:image" content="https://abdelrahman-emam-portfolio.vercel.app/og-image.png">
-  <meta property="og:image:secure_url" content="https://abdelrahman-emam-portfolio.vercel.app/og-image.png">
-  <meta property="og:image:type" content="image/png">
+  <meta property="og:image" content="https://abdelrahman-emam-portfolio.vercel.app/og-image.jpg">
+  <meta property="og:image:secure_url" content="https://abdelrahman-emam-portfolio.vercel.app/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Abdelrahman Emam Angular Frontend Developer portfolio preview">
   <meta property="og:site_name" content="Abdelrahman Emam Portfolio">
   <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ar_EG">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Abdelrahman Emam | Angular Frontend Developer">
-  <meta name="twitter:description" content="Angular Frontend Developer in Cairo building responsive web interfaces, REST API integrations, and client-ready projects.">
-  <meta name="twitter:image" content="https://abdelrahman-emam-portfolio.vercel.app/og-image.png">
+  <meta name="twitter:title" content="Abdelrahman Emam | Angular Frontend Developer for Client-Ready Web Apps">
+  <meta name="twitter:description" content="Cairo-based Angular Frontend Developer building responsive, accessible, API-connected web interfaces for client projects and real product workflows.">
+  <meta name="twitter:image" content="https://abdelrahman-emam-portfolio.vercel.app/og-image.jpg">
   <meta name="twitter:image:alt" content="Abdelrahman Emam Angular Frontend Developer portfolio preview">
 </head>
 <body>

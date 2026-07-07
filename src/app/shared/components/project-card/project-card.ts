@@ -26,6 +26,15 @@ export class ProjectCard {
   protected readonly isPrivate = computed(() => this.project().actions.some((action) => action.isPrivate));
   protected readonly previewType = computed(() => this.project().id);
   protected readonly hasProjectImage = computed(() => Boolean(this.project().imageUrl) && !this.imageFailed());
+  protected readonly imageSizes = computed(() =>
+    this.compact()
+      ? '(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 33vw'
+      : '(max-width: 980px) 100vw, 50vw',
+  );
+  protected readonly unavailableLabel: LocalizedText = {
+    en: 'unavailable',
+    ar: 'غير متاح',
+  };
 
   protected text(value: LocalizedText): string {
     return value[this.languageService.language()];
@@ -49,6 +58,10 @@ export class ProjectCard {
 
   protected actionAriaLabel(action: ProjectAction): string {
     return `${this.actionLabel(action)} - ${this.text(this.project().title)}`;
+  }
+
+  protected unavailableActionAriaLabel(action: ProjectAction): string {
+    return `${this.actionAriaLabel(action)} ${this.text(this.unavailableLabel)}`;
   }
 
   protected imageAlt(): string {

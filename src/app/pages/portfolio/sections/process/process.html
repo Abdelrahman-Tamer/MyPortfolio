@@ -1,0 +1,32 @@
+<section class="section container process-section">
+  <header class="section-header">
+    <div class="section-kicker">
+      <span>05</span>
+      <i aria-hidden="true"></i>
+      {{ text(data.sectionHeadings.process.label) }}
+    </div>
+
+    @if (data.sectionHeadings.process.title; as title) {
+      <h2 class="h-section">{{ text(title) }}</h2>
+    }
+  </header>
+
+  <div class="process-grid">
+    @for (step of data.processSteps; track step.id) {
+      <article class="process-card">
+        <div class="process-step-top">
+          <div class="process-icon" aria-hidden="true">
+            <app-icon [name]="stepIcons[$index]" [size]="19" />
+          </div>
+          <span dir="ltr">{{ $index + 1 }}</span>
+        </div>
+        <h3>{{ text(step.title) }}</h3>
+        <p>{{ text(step.description) }}</p>
+      </article>
+    }
+  </div>
+</section>
+
+<div class="container section-divider" aria-hidden="true">
+  <div></div>
+</div>

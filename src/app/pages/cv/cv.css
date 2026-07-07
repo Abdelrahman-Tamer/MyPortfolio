@@ -1,0 +1,353 @@
+:host {
+  display: block;
+}
+
+.cv-page .skip-link {
+  position: fixed;
+  top: 12px;
+  inset-inline-start: 12px;
+  z-index: 100;
+  transform: translateY(-160%);
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--on-accent);
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.cv-page .skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+.cv-back-link {
+  position: fixed;
+  top: 18px;
+  inset-inline-start: 18px;
+  z-index: 10;
+}
+
+.back-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.78);
+  color: #374151;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.08);
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+}
+
+.back-link-icon {
+  transform: rotate(225deg);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .back-link:hover {
+    border-color: rgba(37, 99, 235, 0.32);
+    color: #0f172a;
+    transform: translateY(-2px);
+  }
+}
+
+@media (max-width: 700px) {
+  .cv-back-link {
+    position: static;
+    width: fit-content;
+    margin: 18px 12px 0;
+  }
+}
+:host {
+  display: block;
+  background:
+    radial-gradient(circle at 16% 8%, rgba(93, 167, 251, 0.18), transparent 28rem),
+    radial-gradient(circle at 86% 12%, rgba(139, 92, 246, 0.12), transparent 26rem),
+    radial-gradient(circle at 50% 92%, rgba(20, 184, 166, 0.12), transparent 30rem),
+    #fcfdfe;
+  color: #05070a;
+  color-scheme: light;
+}
+
+.cv-page {
+  min-height: 100vh;
+  background: transparent;
+}
+
+.cv-main {
+  width: min(100%, 940px);
+  margin: 0 auto;
+  padding: 48px 32px 72px;
+}
+
+.cv-document {
+  overflow: visible;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 6px;
+  background: #ffffff;
+  box-shadow: 0 28px 80px rgba(15, 23, 42, 0.14);
+  color: #05070a;
+  padding: 44px 48px 42px;
+}
+
+.resume-header {
+  border-bottom: 2px solid #111827;
+  padding-bottom: 18px;
+  text-align: center;
+}
+
+.resume-header h1 {
+  margin: 0;
+  color: #05070a;
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-size: 44px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.1;
+}
+
+.resume-header > p {
+  margin: 12px 0 20px;
+  color: #05070a;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.resume-header address {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 8px;
+  color: #05070a;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 1.5;
+}
+
+.resume-header address > *:not(:last-child)::after {
+  content: "|";
+  margin-inline-start: 8px;
+  color: #05070a;
+}
+
+.resume-header address a,
+.resume-link-row a {
+  color: #075985;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.resume-socials {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.resume-socials a {
+  display: inline-flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #05070a;
+  border-radius: 5px;
+  color: #05070a;
+  text-decoration: none;
+}
+
+.resume-section {
+  margin-top: 24px;
+}
+
+.resume-section h2 {
+  margin: 0 0 9px;
+  border-bottom: 1px solid #05070a;
+  color: #05070a;
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.resume-section p,
+.resume-section li,
+.resume-skill-list {
+  color: #05070a;
+  font-size: 15px;
+  line-height: 1.78;
+}
+
+.resume-section p,
+.resume-section ul,
+.resume-skill-list,
+.resume-entry {
+  margin: 0;
+}
+
+.resume-section ul {
+  padding-inline-start: 22px;
+}
+
+.resume-skill-list {
+  display: grid;
+  gap: 4px;
+}
+
+.resume-skill-list div {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  align-items: start;
+  column-gap: 5px;
+}
+
+.resume-skill-list dt {
+  flex-shrink: 0;
+  color: #05070a;
+  font-weight: 800;
+}
+
+.resume-skill-list dd {
+  margin: 0;
+}
+
+.resume-entry + .resume-entry {
+  margin-top: 16px;
+}
+
+.resume-entry header {
+  margin-bottom: 4px;
+}
+
+.resume-entry h3 {
+  display: inline;
+  margin: 0;
+  color: #05070a;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.resume-entry header p,
+.resume-entry > p {
+  color: #05070a;
+  font-size: 15px;
+  line-height: 1.68;
+}
+
+.resume-link-row {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-inline-start: 8px;
+}
+
+.resume-entry-split {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.resume-entry-split time {
+  flex-shrink: 0;
+  color: #374151;
+  font-size: 14px;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .cv-main {
+    padding: 22px 12px 42px;
+  }
+
+  .cv-document {
+    border-radius: 4px;
+    padding: 22px 18px 26px;
+  }
+
+  .resume-header h1 {
+    font-size: 31px;
+  }
+
+  .resume-header > p {
+    font-size: 15px;
+  }
+
+  .resume-header address {
+    flex-direction: column;
+    gap: 2px;
+    font-size: 12px;
+  }
+
+  .resume-header address > *::after {
+    content: none !important;
+  }
+
+  .resume-skill-list div,
+  .resume-entry-split {
+    display: block;
+  }
+
+  .resume-entry-split time {
+    display: block;
+    margin-top: 2px;
+  }
+
+  .resume-section h2 {
+    font-size: 16px;
+  }
+
+  .resume-section p,
+  .resume-section li,
+  .resume-skill-list,
+  .resume-entry header p,
+  .resume-entry > p {
+    font-size: 12.5px;
+    line-height: 1.72;
+  }
+}
+
+@media print {
+  body {
+    background: #ffffff !important;
+  }
+
+  .cv-nav,
+  .cv-hero,
+  .cv-side-panel,
+  .cv-bottom-nav,
+  .skip-link {
+    display: none !important;
+  }
+
+  .cv-main,
+  .container {
+    max-width: none;
+    padding: 0 !important;
+  }
+
+  .cv-layout {
+    display: block;
+  }
+
+  .cv-document {
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+}

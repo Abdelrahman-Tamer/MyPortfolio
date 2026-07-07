@@ -15,6 +15,9 @@ export interface PersonalInfo {
   readonly location: LocalizedText;
   readonly email: string;
   readonly phone: string;
+  readonly resumeUrl: string;
+  readonly resumePdfUrl: string;
+  readonly resumeAvailable: boolean;
 }
 
 export interface HeroContent {
@@ -29,6 +32,7 @@ export interface HeroContent {
 export interface StatItem {
   readonly id: string;
   readonly label: LocalizedText;
+  readonly detail: LocalizedText;
 }
 
 export interface AboutContent {
@@ -46,7 +50,9 @@ export interface PortfolioSectionHeadings {
   readonly services: SectionHeadingContent;
   readonly projects: SectionHeadingContent;
   readonly moreProjects: SectionHeadingContent;
+  readonly testimonials: SectionHeadingContent;
   readonly skills: SectionHeadingContent;
+  readonly process: SectionHeadingContent;
   readonly contact: SectionHeadingContent;
 }
 
@@ -75,6 +81,9 @@ export interface ProjectItem {
   readonly title: LocalizedText;
   readonly type?: LocalizedText;
   readonly description: LocalizedText;
+  readonly problem?: LocalizedText;
+  readonly solution?: LocalizedText;
+  readonly outcome?: LocalizedText;
   readonly roleLine?: LocalizedText;
   readonly tags: readonly string[];
   readonly actions: readonly ProjectAction[];
@@ -93,6 +102,19 @@ export interface SkillCategory {
 export interface CertificationItem {
   readonly id: string;
   readonly title: LocalizedText;
+}
+
+export interface TestimonialItem {
+  readonly id: string;
+  readonly quote: LocalizedText;
+  readonly name: LocalizedText;
+  readonly role: LocalizedText;
+}
+
+export interface ProcessStep {
+  readonly id: string;
+  readonly title: LocalizedText;
+  readonly description: LocalizedText;
 }
 
 export interface ContactFormLabels {
@@ -135,7 +157,9 @@ export interface PortfolioData {
   readonly services: readonly ServiceItem[];
   readonly featuredProjects: readonly ProjectItem[];
   readonly moreProjects: readonly ProjectItem[];
+  readonly testimonials: readonly TestimonialItem[];
   readonly skills: readonly SkillCategory[];
+  readonly processSteps: readonly ProcessStep[];
   readonly certifications: readonly CertificationItem[];
   readonly contact: ContactInfo;
   readonly footer: FooterContent;

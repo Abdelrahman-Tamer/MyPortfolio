@@ -1,16 +1,17 @@
 <div class="portfolio-root">
-  <div #cursorSpot class="cursor-spot" aria-hidden="true"></div>
   <div class="portfolio-grid-bg" aria-hidden="true"></div>
 
   <div class="portfolio-content">
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <app-navbar />
-    <main>
+    <main id="main-content" tabindex="-1">
       <app-hero id="home" />
       <app-stats />
       <app-about id="about" />
       <app-services id="services" />
       <app-projects id="projects" />
       <app-skills id="skills" />
+      <app-process />
       <app-contact id="contact" />
     </main>
     <app-footer />
@@ -19,10 +20,11 @@
   <aside aria-label="Quick contact">
     <a
       class="whatsapp-float"
+      [class.is-hidden]="whatsappHidden()"
       [href]="whatsappHref"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Contact me on WhatsApp"
+      [attr.aria-label]="text(whatsappLabel)"
     >
       <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
         <path

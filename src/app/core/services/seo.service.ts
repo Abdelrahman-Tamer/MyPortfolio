@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { DestroyRef, inject, Service } from '@angular/core';
+import { DestroyRef, effect, inject, Service } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
@@ -13,14 +13,19 @@ import {
   GITHUB_URL,
   LINKEDIN_URL,
   LOGO_PATH,
+  ROUTE_SEO,
   SITE_NAME,
   SITE_URL,
+  SOCIAL_IMAGE_TYPE,
   THEME_COLOR,
 } from '../seo/seo.config';
 import type { ProjectAction, ProjectItem } from '../models/portfolio.models';
 import type { SeoRouteData } from '../seo/seo.models';
+import { LanguageService } from './language.service';
+import { ThemeService } from './theme.service';
 
 type JsonLdObject = Record<string, unknown>;
+const LIGHT_THEME_COLOR = '#eef2f9';
 
 @Service()
 export class SeoService {
@@ -30,7 +35,17 @@ export class SeoService {
   private readonly route = inject(ActivatedRoute);
   private readonly destroyRef = inject(DestroyRef);
   private readonly document = inject(DOCUMENT);
+  private readonly themeService = inject(ThemeService);
+  private readonly languageService = inject(LanguageService);
   private trackingStarted = false;
+  private readonly preferenceMetadataEffect = effect(() => {
+    this.themeService.theme();
+    this.languageService.language();
+
+    if (this.trackingStarted) {
+      this.setRouteMetadata();
+    }
+  });
 
   trackRouteMetadata(): void {
     if (this.trackingStarted) {
@@ -53,17 +68,15 @@ export class SeoService {
     const canonicalUrl = this.absoluteUrl(seo.path);
 
     this.title.setTitle(seo.title);
-    this.setDocumentLanguage();
     this.setCanonicalUrl(canonicalUrl);
 
     this.meta.updateTag({ name: 'viewport', content: 'width=device-width, initial-scale=1' });
     this.meta.updateTag({ name: 'description', content: seo.description });
-    this.meta.updateTag({ name: 'keywords', content: seo.keywords });
     this.meta.updateTag({ name: 'author', content: AUTHOR_NAME });
     this.meta.updateTag({ name: 'application-name', content: SITE_NAME });
     this.meta.updateTag({ name: 'robots', content: seo.robots });
-    this.meta.updateTag({ name: 'theme-color', content: THEME_COLOR });
-    this.meta.updateTag({ name: 'language', content: 'English' });
+    this.meta.updateTag({ name: 'theme-color', content: this.themeColor() });
+    this.meta.updateTag({ name: 'language', content: this.languageName() });
 
     this.meta.updateTag({ property: 'og:title', content: seo.title });
     this.meta.updateTag({ property: 'og:description', content: seo.description });
@@ -71,12 +84,13 @@ export class SeoService {
     this.meta.updateTag({ property: 'og:url', content: canonicalUrl });
     this.meta.updateTag({ property: 'og:image', content: seo.image });
     this.meta.updateTag({ property: 'og:image:secure_url', content: seo.image });
-    this.meta.updateTag({ property: 'og:image:type', content: 'image/png' });
+    this.meta.updateTag({ property: 'og:image:type', content: SOCIAL_IMAGE_TYPE });
     this.meta.updateTag({ property: 'og:image:width', content: '1200' });
     this.meta.updateTag({ property: 'og:image:height', content: '630' });
     this.meta.updateTag({ property: 'og:image:alt', content: seo.imageAlt });
     this.meta.updateTag({ property: 'og:site_name', content: SITE_NAME });
-    this.meta.updateTag({ property: 'og:locale', content: 'en_US' });
+    this.meta.updateTag({ property: 'og:locale', content: this.ogLocale() });
+    this.meta.updateTag({ property: 'og:locale:alternate', content: this.alternateOgLocale() });
 
     this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
     this.meta.updateTag({ name: 'twitter:title', content: seo.title });
@@ -85,6 +99,7 @@ export class SeoService {
     this.meta.updateTag({ name: 'twitter:image:alt', content: seo.imageAlt });
 
     this.setStructuredData(seo, canonicalUrl);
+    queueMicrotask(() => this.title.setTitle(seo.title));
   }
 
   private currentSeoData(): SeoRouteData {
@@ -96,7 +111,28 @@ export class SeoService {
 
     const seo = activeRoute.snapshot.data['seo'];
 
-    return this.isSeoRouteData(seo) ? seo : DEFAULT_SEO;
+    if (!this.isSeoRouteData(seo)) {
+      return DEFAULT_SEO;
+    }
+
+    if (seo.path !== '/') {
+      return seo;
+    }
+
+    const fragment = this.router.parseUrl(this.router.url).fragment;
+
+    if (this.isPortfolioSection(fragment)) {
+      return {
+        ...ROUTE_SEO[fragment],
+        path: '/',
+      };
+    }
+
+    return seo;
+  }
+
+  private isPortfolioSection(value: string | null): value is 'about' | 'services' | 'projects' | 'skills' | 'contact' {
+    return value === 'about' || value === 'services' || value === 'projects' || value === 'skills' || value === 'contact';
   }
 
   private isSeoRouteData(value: unknown): value is SeoRouteData {
@@ -121,9 +157,20 @@ export class SeoService {
     return `${SITE_URL}${path === '/' ? '/' : path}`;
   }
 
-  private setDocumentLanguage(): void {
-    this.document.documentElement.lang = 'en';
-    this.document.documentElement.dir = 'ltr';
+  private themeColor(): string {
+    return this.themeService.isDark() ? THEME_COLOR : LIGHT_THEME_COLOR;
+  }
+
+  private languageName(): string {
+    return this.languageService.isArabic() ? 'Arabic' : 'English';
+  }
+
+  private ogLocale(): string {
+    return this.languageService.isArabic() ? 'ar_EG' : 'en_US';
+  }
+
+  private alternateOgLocale(): string {
+    return this.languageService.isArabic() ? 'en_US' : 'ar_EG';
   }
 
   private setCanonicalUrl(url: string): void {
@@ -164,6 +211,8 @@ export class SeoService {
         'JavaScript',
         'REST APIs',
         'Responsive Web Design',
+        'Accessibility',
+        'Arabic RTL Interfaces',
         'Firebase',
         'ASP.NET Core',
       ],
@@ -190,7 +239,7 @@ export class SeoService {
       '@id': portfolioId,
       name: `${AUTHOR_NAME} Portfolio`,
       description: DEFAULT_SEO.description,
-      url: `${SITE_URL}/projects`,
+      url: `${SITE_URL}/#projects`,
       isPartOf: {
         '@id': websiteId,
       },
@@ -211,6 +260,7 @@ export class SeoService {
       description: seo.description,
       url: canonicalUrl,
       image: seo.image,
+      inLanguage: ['en', 'ar'],
       isPartOf: {
         '@id': websiteId,
       },

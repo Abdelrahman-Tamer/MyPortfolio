@@ -1,16 +1,15 @@
-<section class="container stats-container" aria-label="Portfolio stats">
+<section class="container stats-container" aria-label="Portfolio trust signals">
   <div class="resp-stats">
     @for (stat of stats; track stat.id) {
-      <div class="stat-cell">
-        <div class="stat-num">
-          @if (statVisuals[$index].icon; as icon) {
-            <app-icon [name]="icon" [size]="31" />
-          } @else {
-            {{ statVisuals[$index].value }}
-          }
+      <article class="stat-cell">
+        <div class="stat-mark" aria-hidden="true">
+          <app-icon [name]="statVisuals[$index].icon" [size]="22" />
         </div>
-        <div class="stat-label">{{ text(stat.label) }}</div>
-      </div>
+        <div class="stat-copy">
+          <p class="stat-label">{{ text(stat.label) }}</p>
+          <p>{{ text(stat.detail) }}</p>
+        </div>
+      </article>
     }
   </div>
 </section>
