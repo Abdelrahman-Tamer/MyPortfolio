@@ -11,20 +11,36 @@
   display: grid;
   overflow: hidden;
   grid-template-columns: repeat(4, 1fr);
+  align-items: stretch;
   border: 1px solid var(--border);
   border-radius: 16px;
   background: var(--stat-bg);
 }
 
 .stat-cell {
+  --stat-color: var(--accent);
   display: flex;
+  flex-direction: column;
   gap: 14px;
   align-items: flex-start;
-  padding: 32px 28px;
+  min-height: 220px;
+  padding: 36px 36px 34px;
   border-inline-end: 1px solid var(--border);
   transition:
     background-color var(--duration-normal) var(--ease-out),
     transform var(--duration-normal) var(--ease-out);
+}
+
+.stat-cell:nth-child(2) {
+  --stat-color: var(--accent-purple);
+}
+
+.stat-cell:nth-child(3) {
+  --stat-color: var(--accent-green);
+}
+
+.stat-cell:nth-child(4) {
+  --stat-color: var(--accent-orange);
 }
 
 .stat-cell:last-child {
@@ -34,14 +50,20 @@
 .stat-mark {
   display: flex;
   flex: 0 0 auto;
-  width: 42px;
-  height: 42px;
+  width: 52px;
+  height: 52px;
   align-items: center;
   justify-content: center;
-  border: 1px solid color-mix(in srgb, var(--accent) 22%, transparent);
-  border-radius: 10px;
-  background: color-mix(in srgb, var(--accent) 9%, transparent);
-  color: var(--accent);
+  border: 1px solid color-mix(in srgb, var(--stat-color) 22%, transparent);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--stat-color) 10%, transparent);
+  color: var(--stat-color);
+}
+
+.stat-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .stat-label {
@@ -59,15 +81,19 @@
 }
 
 .stat-copy p {
-  margin: 6px 0 0;
+  margin: 0;
   color: var(--muted);
   font-size: 13px;
   line-height: 1.65;
 }
 
+.stat-copy .stat-label {
+  color: var(--text);
+}
+
 @media (hover: hover) and (pointer: fine) {
   .stat-cell:hover {
-    background: color-mix(in srgb, var(--accent) 5%, transparent);
+    background: color-mix(in srgb, var(--stat-color) 5%, transparent);
     transform: translateY(-3px);
   }
 }
@@ -103,13 +129,20 @@
 
 @media (min-width: 769px) and (max-width: 1100px) {
   .stat-cell {
-    padding: 28px 24px;
+    min-height: 210px;
+    padding: 32px 28px 30px;
   }
 }
 
 @media (max-width: 480px) {
   .stat-cell {
-    padding: 24px 20px;
+    min-height: 204px;
+    padding: 26px 22px;
+  }
+
+  .stat-mark {
+    width: 48px;
+    height: 48px;
   }
 }
 

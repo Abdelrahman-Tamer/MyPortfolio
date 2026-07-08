@@ -130,7 +130,7 @@ export const portfolioData = {
         ar: 'عمل عميل فعلي',
       },
       detail: {
-        en: 'Delivered reliable web apps with clean UX, strong performance, and maintainable code.',
+        en: 'Production web apps with clean UX, fast flows, and maintainable frontend code.',
         ar: 'أنفذ تطبيقات ويب موثوقة بتجربة واضحة، أداء قوي، وكود قابل للتطوير.',
       },
     },
@@ -141,7 +141,7 @@ export const portfolioData = {
         ar: 'خبرة Angular',
       },
       detail: {
-        en: 'SPAs with routing, auth flows, forms, and API integration.',
+        en: 'Angular SPAs with routing, auth flows, forms, and API integration.',
         ar: 'تطبيقات SPA تشمل Routing وتسجيل دخول ونماذج وربط APIs.',
       },
     },
@@ -152,7 +152,7 @@ export const portfolioData = {
         ar: '5+ مشاريع منفذة',
       },
       detail: {
-        en: 'E-commerce, healthcare, tourism, productivity, and landing pages.',
+        en: 'E-commerce, healthcare, tourism, productivity tools, and landing pages.',
         ar: 'تجارة إلكترونية، رعاية صحية، سياحة، إنتاجية، وصفحات هبوط.',
       },
     },

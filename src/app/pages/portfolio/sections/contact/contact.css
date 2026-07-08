@@ -92,7 +92,7 @@
   display: flex;
   overflow: hidden;
   flex-direction: column;
-  gap: 18px;
+  gap: 10px;
   border: 1px solid var(--border);
   border-radius: 16px;
   background: var(--surface);
@@ -118,7 +118,7 @@
 
 .form-field label {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
   color: var(--strong);
   font-size: 14px;
   font-weight: 600;
@@ -134,7 +134,7 @@
   font: inherit;
   font-size: 15px;
   outline: none;
-  padding: 12px 14px;
+  padding: 10px 12px;
   transition:
     border-color var(--duration-fast) var(--ease-out),
     box-shadow var(--duration-fast) var(--ease-out),
@@ -142,8 +142,18 @@
 }
 
 .form-field textarea {
-  min-height: 148px;
+  min-height: 136px;
   resize: vertical;
+}
+
+.contact-form .form-error {
+  min-height: 16px;
+  margin-top: 4px;
+  line-height: 1.35;
+}
+
+.contact-form .form-feedback:empty {
+  display: none;
 }
 
 .form-field input::placeholder,
