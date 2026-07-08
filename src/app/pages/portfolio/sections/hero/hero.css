@@ -38,13 +38,34 @@
   height: 7px;
 }
 
+.ping-dot::before,
+.ping-dot::after,
 .ping-dot span:first-child {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: var(--accent-green);
-  opacity: 0.28;
-  transform: scale(1.9);
+  border: 1px solid color-mix(in srgb, var(--accent-green) 42%, transparent);
+  animation: availability-radar-pulse 2.4s ease-out infinite;
+  opacity: 0.75;
+  transform-origin: center;
+}
+
+.ping-dot::before,
+.ping-dot::after {
+  content: "";
+  pointer-events: none;
+}
+
+.ping-dot::before {
+  animation-delay: 0s;
+}
+
+.ping-dot span:first-child {
+  animation-delay: 0.8s;
+}
+
+.ping-dot::after {
+  animation-delay: 1.6s;
 }
 
 .ping-dot span:last-child {
@@ -59,6 +80,18 @@
   width: 1px;
   height: 12px;
   background: var(--border);
+}
+
+@keyframes availability-radar-pulse {
+  0% {
+    opacity: 0.75;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(3.6);
+  }
 }
 
 .map-pin {
@@ -448,6 +481,14 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .ping-dot::before,
+  .ping-dot::after,
+  .ping-dot span:first-child {
+    animation: none;
+    opacity: 0;
+    transform: scale(1);
+  }
+
   .figma-marquee {
     overflow: visible;
   }
