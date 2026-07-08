@@ -8,8 +8,11 @@
 
 # Node
 /node_modules
-npm-debug.log
-yarn-error.log
+npm-debug.log*
+yarn-debug.log*
+npm-error.log*
+yarn-error.log*
+pnpm-debug.log*
 
 # IDEs and editors
 .idea/
@@ -30,7 +33,7 @@ yarn-error.log
 .history/*
 
 # Miscellaneous
-/.angular/cache
+/.angular/
 .sass-cache/
 /connect.lock
 /coverage
@@ -38,11 +41,15 @@ yarn-error.log
 testem.log
 /typings
 __screenshots__/
+/.agents/
 /.codex/
 /.playwright-cli/
 /.playwright-mcp/
 /output/
 opencode.json
+.env
+.env.*
+!.env.example
 
 # System files
 .DS_Store
