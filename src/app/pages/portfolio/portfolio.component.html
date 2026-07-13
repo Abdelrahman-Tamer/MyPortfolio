@@ -6,15 +6,19 @@
     <app-navbar />
     <main id="main-content" tabindex="-1">
       <app-hero id="home" />
-      <app-stats />
-      <app-about id="about" />
-      <app-services id="services" />
-      <app-projects id="projects" />
-      <app-skills id="skills" />
-      <app-process />
-      <app-contact id="contact" />
+      @defer (on idle) {
+        <app-stats />
+        <app-about id="about" />
+        <app-services id="services" />
+        <app-projects id="projects" />
+        <app-skills id="skills" />
+        <app-process />
+        <app-contact id="contact" />
+      }
     </main>
-    <app-footer />
+    @defer (on idle) {
+      <app-footer />
+    }
   </div>
 
   <aside aria-label="Quick contact">

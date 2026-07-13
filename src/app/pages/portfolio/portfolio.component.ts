@@ -1,4 +1,4 @@
-import { afterNextRender, Component, DestroyRef, inject, signal } from '@angular/core';
+import { afterEveryRender, Component, DestroyRef, inject, signal } from '@angular/core';
 import { About } from './sections/about/about';
 import { Contact } from './sections/contact/contact';
 import { Footer } from './sections/footer/footer';
@@ -22,6 +22,7 @@ import { LanguageService } from '../../core/services/language.service';
 export class PortfolioComponent {
   private readonly destroyRef = inject(DestroyRef);
   private readonly languageService = inject(LanguageService);
+  private contactObserver?: IntersectionObserver;
   protected readonly whatsappHref = `https://wa.me/${contactConfig.whatsappNumber}?text=${encodeURIComponent(contactConfig.whatsappMessage)}`;
   protected readonly whatsappHidden = signal(false);
   protected readonly whatsappLabel: LocalizedText = {
@@ -30,7 +31,7 @@ export class PortfolioComponent {
   };
 
   constructor() {
-    afterNextRender(() => this.observeContactSection());
+    afterEveryRender(() => this.observeContactSection());
   }
 
   protected text(value: LocalizedText): string {
@@ -42,18 +43,22 @@ export class PortfolioComponent {
       return;
     }
 
+    if (this.contactObserver) {
+      return;
+    }
+
     const contactSection = document.getElementById('contact');
 
     if (!contactSection) {
       return;
     }
 
-    const observer = new IntersectionObserver(
+    this.contactObserver = new IntersectionObserver(
       ([entry]) => this.whatsappHidden.set(Boolean(entry?.isIntersecting)),
       { threshold: 0.16 },
     );
 
-    observer.observe(contactSection);
-    this.destroyRef.onDestroy(() => observer.disconnect());
+    this.contactObserver.observe(contactSection);
+    this.destroyRef.onDestroy(() => this.contactObserver?.disconnect());
   }
 }

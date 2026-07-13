@@ -1,0 +1,17 @@
+# Abdelrahman Emam
+
+> Frontend developer based in Egypt, specializing in Angular and TypeScript with .NET backend experience.
+
+## Pages
+
+- [Home](https://abdelrahman-emam-portfolio.vercel.app/#home)
+- [About](https://abdelrahman-emam-portfolio.vercel.app/#about)
+- [Projects](https://abdelrahman-emam-portfolio.vercel.app/#projects)
+- [Skills](https://abdelrahman-emam-portfolio.vercel.app/#skills)
+- [Contact](https://abdelrahman-emam-portfolio.vercel.app/#contact)
+- [CV](https://abdelrahman-emam-portfolio.vercel.app/cv)
+
+## Projects
+
+- [NileGuide Tourism Platform](https://www.nileguide.online/)
+- [Doccure Healthcare Appointment Platform](https://doccure-psi.vercel.app/)

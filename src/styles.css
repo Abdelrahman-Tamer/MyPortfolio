@@ -652,7 +652,7 @@ html::-webkit-scrollbar-corner {
   border-radius: 999px;
   background: color-mix(in srgb, var(--project-color) 9%, transparent);
   padding: 4px 10px;
-  color: var(--project-color);
+  color: var(--text);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.04em;

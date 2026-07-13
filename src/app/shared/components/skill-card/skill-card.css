@@ -14,6 +14,7 @@
   border-radius: 16px;
   background: var(--surface);
   padding: 24px;
+  color: var(--text);
   transition:
     border-color var(--duration-normal) var(--ease-out),
     box-shadow var(--duration-normal) var(--ease-out),
@@ -93,7 +94,7 @@
   border-radius: 10px;
   background: color-mix(in srgb, var(--accent) 6%, transparent);
   padding: 7px 12px;
-  color: var(--strong);
+  color: var(--text);
   font-family: "Space Grotesk", sans-serif;
   font-size: 13px;
   font-weight: 600;
