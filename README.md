@@ -1,4 +1,4 @@
-# Abdelrahman Emam Portfolio
+# Abdelrahman Emam | Portfolio & CV
 
 <p align="center">
   <a href="https://abdelrahman-emam-portfolio.vercel.app/">
@@ -18,180 +18,151 @@
 </p>
 
 <p align="center">
-  <a href="https://abdelrahman-emam-portfolio.vercel.app/">Live Portfolio</a>
+  <a href="https://abdelrahman-emam-portfolio.vercel.app/">🌐 Live Portfolio</a>
   ·
-  <a href="https://www.linkedin.com/in/abd-el-rahman-emam">LinkedIn</a>
+  <a href="https://abdelrahman-emam-portfolio.vercel.app/cv">📄 Live CV / Resume</a>
   ·
-  <a href="https://github.com/Abdelrahman-Tamer">GitHub</a>
+  <a href="https://www.linkedin.com/in/abd-el-rahman-emam">💼 LinkedIn</a>
   ·
-  <a href="mailto:abdelrahmanacc84@gmail.com">Email</a>
+  <a href="https://github.com/Abdelrahman-Tamer">🐙 GitHub</a>
+  ·
+  <a href="mailto:abdelrahmanacc84@gmail.com">✉️ Email</a>
 </p>
 
-## Overview
+---
 
-This is the production portfolio for Abdelrahman Emam, a Cairo-based Frontend and Angular Developer. The app presents selected client work, Angular projects, services, skills, a dedicated CV route, and an EmailJS-powered contact flow in a polished bilingual interface.
+## 📌 Overview
 
-The project is built with Angular 22, strict TypeScript, standalone components, SSR/prerender support, optimized public assets, and route-aware SEO metadata for deployment on static or server-capable hosts.
+This is the official production portfolio and CV platform for **Abdelrahman Emam**, an **Angular & Frontend Developer** based in Cairo, Egypt. 
 
-## Highlights
+The application is engineered as a high-performance Single Page Application (SPA) with **Server-Side Rendering (SSR)** and **static prerendering**, presenting real-world client deliverables, production platforms, e-commerce systems, technical skills, services, a dedicated interactive CV route with PDF download, and an automated EmailJS contact flow.
 
-| Area | What is included |
-| --- | --- |
-| Portfolio UX | Hero, stats, about, services, projects, skills, process, contact, footer, and floating WhatsApp CTA |
-| CV | Dedicated `/cv` route plus downloadable PDF at `/Abdelrahman-Emam-CV.pdf` |
-| Internationalization | English and Arabic content with LTR/RTL direction switching |
-| Theme | Persistent light/dark mode powered by Angular services |
-| Projects | Client work, graduation project, e-commerce, healthcare, bookmark manager, and landing pages |
-| Contact | EmailJS form, validation states, mail links, phone links, and WhatsApp handoff |
-| SEO | Canonical metadata, Open Graph, Twitter cards, JSON-LD, sitemap, robots, manifest, and social image |
-| Performance | WebP project screenshots, lazy routes, optimized Angular production build, and hashed output |
+---
 
-## Tech Stack
+## ✨ Key Features & Architecture
 
-- Angular 22 standalone application
-- TypeScript 6 with strict compiler settings
-- Angular Router with lazy `loadComponent`
-- Angular SSR and prerender route configuration
-- Tailwind CSS 4 and custom CSS properties
-- EmailJS browser SDK
-- Vitest through Angular CLI testing
-- WebP image assets and static SEO files from `public/`
+| Feature | Description |
+| :--- | :--- |
+| **Bilingual (EN / AR)** | Full Arabic (RTL) and English (LTR) language switching with complete typography and directional adaptation. |
+| **Interactive CV (`/cv`)** | Dedicated resume route with real-time language toggle and direct PDF export (`/Abdelrahman-Emam-CV.pdf`). |
+| **Theme Engine** | Persistent Dark & Light modes with smooth color transitions and zero flash. |
+| **Project Showcase** | Detailed case studies covering problems, solutions, outcomes, tech stacks, and live links. |
+| **Contact & WhatsApp Flow** | Interactive EmailJS contact form with instant validation, direct mail, phone, and contextual WhatsApp chat. |
+| **Technical SEO** | Automated Open Graph tags, Twitter cards, canonical links, Schema.org JSON-LD, sitemap.xml, and robots.txt. |
+| **Speed & Core Web Vitals** | WebP/AVIF responsive image pipeline, lazy-loaded standalone components, and zero layout shift (Zero CLS). |
 
-## Project Structure
+---
+
+## 🚀 Featured Projects
+
+| Project | Tech Stack | Type & Description | Live Link |
+| :--- | :--- | :--- | :--- |
+| **Receipta Pro** | JavaScript ES6+, Firebase, jsPDF, RTL UI | **Confidential Client Project** — Electronic Arabic receipt management system with offline sync and PDF generation. | 🔒 *Private Code* |
+| **Milano Travel** | Angular 22, TypeScript, SSR & Prerender, Technical SEO | **Travel Agency Platform** — Arabic luxury hotel showcase and direct 3-step WhatsApp enquiry flow across 38+ routes. | [Live Demo](https://milanotravel.vercel.app/) |
+| **FreshCart** | Angular 22, TypeScript, Bootstrap 5, JWT, Stripe | **E-commerce Platform** — High-performance SPA with product catalog, cart, wishlist, auth guards, and Stripe checkout. | [Live Demo](https://fresh-cart-roan-seven.vercel.app/) |
+| **NileGuide** | ASP.NET Core, Angular, SQL Server, REST APIs | **Tourism Platform** — Graduation project contributor building REST APIs, reports, authentication, and trip planning UI. | [Live Demo](https://www.nileguide.online/) |
+| **Doccure** | HTML5, CSS3, Bootstrap 5, jQuery | **Healthcare Platform** — Doctor dashboard, patient records, and responsive appointment scheduling interface. | [Live Demo](https://doccure-psi.vercel.app/) |
+| **Bookmarker** | JavaScript ES6+, Bootstrap 5, RegEx, localStorage | **Productivity Tool** — Link bookmark manager with real-time RegEx validation and persistent storage. | [Live Demo](https://bookmark-manager-em.vercel.app/) |
+
+---
+
+## 🛠️ Tech Stack & Tooling
+
+* **Framework & Core**: Angular 22 (Standalone Components, Signals, Strict TypeScript)
+* **Styling**: Tailwind CSS 4, Vanilla CSS Design Tokens, CSS Logical Properties
+* **SSR & Prerendering**: Angular SSR & Node.js server engine
+* **State & Data**: Angular Signals, Reactive Forms, RxJS, REST APIs
+* **Testing & Quality**: Vitest & Angular CLI Test Suite
+* **Assets & Media**: WebP Image Pipeline, SVG vector icons
+* **Deployment & CI**: Vercel / Cloudflare Pages / Node SSR Server
+
+---
+
+## 📁 Repository Structure
 
 ```text
-src/
-  app/
-    core/
-      config/          # Contact and EmailJS public client config
-      data/            # Portfolio content source of truth
-      models/          # Strict portfolio data contracts
-      seo/             # Route metadata and shared SEO constants
-      services/        # Language, theme, and SEO services
-    pages/
-      cv/              # CV route
-      portfolio/       # Main portfolio page and sections
-    shared/
-      components/      # Reusable icon, card, and skill components
-public/
-  images/              # Optimized WebP project previews
-  *.svg, *.png, *.jpg  # Favicons, manifest assets, and social preview
+├── public/
+│   ├── images/                     # Optimized WebP project previews & mockups
+│   ├── Abdelrahman-Emam-CV.pdf     # Direct downloadable PDF resume
+│   ├── og-image.jpg                # Social sharing OpenGraph banner
+│   ├── sitemap.xml & robots.txt    # Search engine discovery configuration
+│   └── site.webmanifest            # PWA manifest metadata
+├── src/
+│   ├── app/
+│   │   ├── core/
+│   │   │   ├── config/             # Public EmailJS & contact configuration
+│   │   │   ├── data/               # Central portfolio data & project facts
+│   │   │   ├── models/             # Strict TypeScript data models
+│   │   │   ├── seo/                # SEO metadata & JSON-LD schemas
+│   │   │   └── services/           # Language (RTL/LTR), Theme, and SEO services
+│   │   ├── pages/
+│   │   │   ├── cv/                 # Dedicated bilingual CV route & controls
+│   │   │   └── portfolio/          # Main portfolio layout and feature sections
+│   │   └── shared/
+│   │       └── components/         # Reusable buttons, cards, and skill components
+│   └── styles.css                  # Global tokens, theme variables, and Tailwind imports
+└── angular.json                    # Angular workspace & build configuration
 ```
 
-## Getting Started
+---
 
-Use the package manager version declared in `package.json` when possible.
+## 💻 Getting Started Locally
+
+### Prerequisites
+* **Node.js**: `v20.x` or `v22.x`
+* **npm**: `v10.x` or later
+
+### Installation
 
 ```bash
+# 1. Clone the repository
+git clone https://github.com/Abdelrahman-Tamer/MyPortfolio.git
+
+# 2. Navigate to project directory
+cd MyPortfolio
+
+# 3. Install dependencies
 npm install
+
+# 4. Start local development server
 npm start
 ```
 
-The local dev server runs at:
+Open your browser at `http://localhost:4200/` to explore the live application.
 
-```text
-http://localhost:4200/
-```
+---
 
-## Available Scripts
+## 🧪 Available Scripts
 
 | Command | Purpose |
-| --- | --- |
-| `npm start` | Start the Angular development server |
-| `npm run build` | Create the production build |
-| `npm test` | Run the Angular test target |
-| `npm run watch` | Build continuously in development mode |
-| `npm run serve:ssr:my-portfolio` | Serve the built SSR output with Node |
+| :--- | :--- |
+| `npm start` | Runs the Angular development server on `http://localhost:4200/` |
+| `npm run build` | Builds the production bundle with SSR and static prerendering |
+| `npm test` | Executes unit tests with Vitest |
+| `npm run watch` | Builds and watches for changes in development mode |
+| `npm run serve:ssr:my-portfolio` | Runs the Node.js SSR production server locally |
 
-## Production Build
+---
 
-```bash
-npm run build
-```
+## 🚢 Production Deployment
 
-Angular writes the deployment artifacts to:
+The project is pre-configured for seamless deployment on **Vercel**, **Cloudflare Pages**, or **Node.js SSR hosts**:
 
-```text
-dist/my-portfolio/
-```
+* **Framework Preset**: Angular
+* **Build Command**: `npm run build`
+* **Static Output Directory**: `dist/my-portfolio/browser`
+* **Server Entry**: `dist/my-portfolio/server/server.mjs`
 
-For static hosting, deploy:
+---
 
-```text
-dist/my-portfolio/browser
-```
+## 👤 Author
 
-For server-capable hosting, build first and run:
+**Abdelrahman Emam**  
+*Frontend Developer | Angular Developer*  
+📍 Cairo, Egypt  
 
-```bash
-npm run serve:ssr:my-portfolio
-```
-
-## Deployment
-
-Recommended production settings:
-
-| Setting | Value |
-| --- | --- |
-| Install command | `npm ci` |
-| Build command | `npm run build` |
-| Static output directory | `dist/my-portfolio/browser` |
-| Node SSR entry | `dist/my-portfolio/server/server.mjs` |
-| Production domain | `https://abdelrahman-emam-portfolio.vercel.app` |
-
-The repo keeps generated output, local automation logs, Playwright snapshots, dependency folders, and private tool state out of Git through `.gitignore`.
-
-## SEO and Assets
-
-Primary SEO configuration lives in:
-
-```text
-src/app/core/seo/seo.config.ts
-```
-
-Public deployment assets live in:
-
-```text
-public/
-```
-
-Important public files:
-
-- `public/og-image.jpg`
-- `public/robots.txt`
-- `public/sitemap.xml`
-- `public/site.webmanifest`
-- `public/favicon.svg`
-- `public/android-chrome-512x512.png`
-- `public/Abdelrahman-Emam-CV.pdf`
-
-## Contact Configuration
-
-The contact form uses EmailJS public browser credentials from:
-
-```text
-src/app/core/config/contact.config.ts
-```
-
-Only public EmailJS identifiers belong in this file. Do not commit SMTP passwords, Gmail passwords, private service tokens, or any other secret credentials.
-
-## Quality Checklist
-
-- Strict TypeScript configuration
-- Lazy route loading for the portfolio and CV views
-- SSR/prerender route declarations
-- Accessible semantic sections and labelled controls
-- Optimized WebP project images
-- Route-aware metadata and JSON-LD updates
-- Clean Git ignore rules for generated and local-only files
-
-## Author
-
-**Abdelrahman Emam**<br>
-Frontend Developer | Angular Developer<br>
-Cairo, Egypt
-
-- Portfolio: [abdelrahman-emam-portfolio.vercel.app](https://abdelrahman-emam-portfolio.vercel.app/)
-- LinkedIn: [abd-el-rahman-emam](https://www.linkedin.com/in/abd-el-rahman-emam)
-- GitHub: [Abdelrahman-Tamer](https://github.com/Abdelrahman-Tamer)
-- Email: [abdelrahmanacc84@gmail.com](mailto:abdelrahmanacc84@gmail.com)
+* 🌐 **Portfolio**: [abdelrahman-emam-portfolio.vercel.app](https://abdelrahman-emam-portfolio.vercel.app/)
+* 📄 **CV / Resume**: [abdelrahman-emam-portfolio.vercel.app/cv](https://abdelrahman-emam-portfolio.vercel.app/cv)
+* 💼 **LinkedIn**: [linkedin.com/in/abd-el-rahman-emam](https://www.linkedin.com/in/abd-el-rahman-emam)
+* 🐙 **GitHub**: [github.com/Abdelrahman-Tamer](https://github.com/Abdelrahman-Tamer)
+* ✉️ **Email**: [abdelrahmanacc84@gmail.com](mailto:abdelrahmanacc84@gmail.com)

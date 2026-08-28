@@ -23,9 +23,9 @@ export class Navbar {
   protected readonly scrolled = signal(false);
   protected readonly activeSection = signal('');
   protected readonly navKeys = ['about', 'services', 'projects', 'skills', 'contact'];
-  protected readonly languageToggleText = computed(() => (this.languageService.isArabic() ? 'ع' : 'EN'));
+  protected readonly languageToggleText = computed(() => (this.languageService.isArabic() ? 'English' : 'العربية'));
   protected readonly languageToggleLabel = computed(() =>
-    this.languageService.isArabic() ? 'Switch language to English' : 'Switch language to Arabic',
+    this.languageService.isArabic() ? 'Switch language to English' : 'التبديل إلى العربية',
   );
   protected readonly cvLabel = computed(() => (this.languageService.isArabic() ? 'السيرة الذاتية' : 'CV'));
   protected readonly hireMeLabel = computed(() => (this.languageService.isArabic() ? 'وظفني' : 'Hire Me'));

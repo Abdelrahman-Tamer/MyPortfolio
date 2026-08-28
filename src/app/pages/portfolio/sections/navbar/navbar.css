@@ -110,7 +110,6 @@
   margin: 0 4px 0 0;
 }
 
-.language-orb-button,
 .theme-icon-button,
 .nav-burger {
   display: flex;
@@ -132,10 +131,26 @@
 }
 
 .language-orb-button {
+  display: inline-flex;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: transparent;
   color: var(--accent);
+  cursor: pointer;
+  margin-inline-start: 4px;
+  padding: 0 12px;
   font-family: "Space Grotesk", "IBM Plex Sans Arabic", sans-serif;
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
 }
 
 .theme-icon-button:hover,
@@ -224,10 +239,15 @@
     display: flex;
   }
 
-  .language-orb-button,
   .theme-icon-button,
   .nav-burger {
     width: 44px;
     height: 44px;
+  }
+
+  .language-orb-button {
+    height: 44px;
+    padding: 0 14px;
+    font-size: 14px;
   }
 }

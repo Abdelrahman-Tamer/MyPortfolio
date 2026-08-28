@@ -244,7 +244,25 @@
 }
 
 .scroll-cue-icon {
-  transform: rotate(135deg);
+  display: inline-flex;
+  transform: translateY(0) rotate(135deg);
+  animation: scroll-cue-bounce 2s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes scroll-cue-bounce {
+  0%, 100% {
+    transform: translateY(0) rotate(135deg);
+  }
+  50% {
+    transform: translateY(6px) rotate(135deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue-icon {
+    animation: none;
+  }
 }
 
 .hero-code {

@@ -264,8 +264,8 @@ export const portfolioData = {
         ar: 'Route Academy، القاهرة، مصر',
       },
       date: {
-        en: 'Mar 2025 – Jul 2026',
-        ar: 'مارس 2025 – يوليو 2026',
+        en: 'Mar 2025 – Present',
+        ar: 'مارس 2025 – حتى الآن',
       },
       description: {
         en: 'Delivered 4+ frontend projects including Angular e-commerce and healthcare platform.',
@@ -321,8 +321,8 @@ export const portfolioData = {
         ar: 'الجامعة المصرية للتعلم الإلكتروني، القاهرة، مصر',
       },
       date: {
-        en: 'Feb 2022 – Jul 2026',
-        ar: 'فبراير 2022 – يوليو 2026',
+        en: '2022 – 2026 (Expected Graduation)',
+        ar: '2022 – 2026 (تخرج متوقع)',
       },
       description: {
         en: 'Relevant coursework: Web Development, Data Structures, Algorithms, Operating Systems, Databases.',
@@ -429,6 +429,60 @@ export const portfolioData = {
       note: {
         en: 'Code and demo are private due to client confidentiality.',
         ar: 'الكود والعرض خاصان بسبب سرية مشروع العميل.',
+      },
+    },
+    {
+      id: 'milano-travel',
+      imageUrl: '/images/milano.webp',
+      imageAlt: {
+        en: 'Milano Travel hotel showcase and agency website preview',
+        ar: 'معاينة موقع ميلانو ترافيل لعرض الفنادق وخدمات السفر',
+      },
+      imagePosition: 'center top',
+      title: {
+        en: 'Milano Travel - Hotel Showcase & WhatsApp Enquiry Platform',
+        ar: 'Milano Travel - موقع لعرض الفنادق وتسهيل التواصل عبر واتساب',
+      },
+      type: {
+        en: 'Travel Agency Platform | Angular SSR & Prerender',
+        ar: 'موقع لمكتب سياحي | Angular SSR و Prerender',
+      },
+      description: {
+        en: 'A fast, responsive showcase website for a travel agency, displaying curated hotels and simplifying customer enquiries via WhatsApp.',
+        ar: 'موقع ويب لمكتب سياحة وسفر يعرض الفنادق المختارة في مصر ويسهل تواصل العملاء وطلب عروض الأسعار مباشرة عبر واتساب.',
+      },
+      problem: {
+        en: 'The travel agency needed an attractive Arabic showcase to present hotel offerings clearly, replacing manual catalog sharing and simplifying direct WhatsApp enquiries for clients.',
+        ar: 'احتاج مكتب السياحة إلى واجهة عربية جذابة لعرض الفنادق والخدمات بوضوح، كبديل لمشاركة العروض يدوياً، وتسهيل استقبال استفسارات وطلبات العملاء مباشرة على واتساب.',
+      },
+      solution: {
+        en: 'Built an Arabic-first Angular SSR platform featuring hotel filtering by location and rating, comprehensive hotel details, and a 3-step enquiry drawer formatting requests directly to WhatsApp.',
+        ar: 'بناء منصة Angular SSR عربية سريعة تتيح تصفح وفلترة الفنادق حسب الموقع والمميزات، مع درج تفاعلي من 3 خطوات يجهز تفاصيل الطلب ويرسلها كرسالة منظمة إلى واتساب المكتب بنقرة واحدة.',
+      },
+      outcome: {
+        en: 'Streamlined the agency hotel catalog presentation, enhanced client trust, and made the WhatsApp booking enquiry process quick and effortless.',
+        ar: 'تنظيم عروض الفنادق للمكتب بشكل احترافي، وزيادة ثقة العملاء، وتسهيل وتسريع إرسال استفسارات الحجز للعملاء عبر واتساب.',
+      },
+      tags: ['Angular 22', 'TypeScript', 'Angular SSR', 'Prerendering', 'WhatsApp Flow', 'Responsive Design', 'Technical SEO'],
+      actions: [
+        {
+          label: {
+            en: 'View Project',
+            ar: 'عرض المشروع',
+          },
+          url: 'https://milanotravel.vercel.app/',
+        },
+        {
+          label: {
+            en: 'Private Code',
+            ar: 'كود خاص',
+          },
+          isPrivate: true,
+        },
+      ],
+      note: {
+        en: 'Source code is private.',
+        ar: 'الكود المصدري خاص.',
       },
     },
     {
@@ -722,6 +776,13 @@ export const portfolioData = {
     },
   ],
   certifications: [
+    {
+      id: 'route-full-stack',
+      title: {
+        en: 'Route Academy - Full Stack Web Developer (Angular & .NET)',
+        ar: 'Route Academy - Full Stack Web Developer (Angular & .NET)',
+      },
+    },
     {
       id: 'nti-web-designer',
       title: {
