@@ -32,7 +32,7 @@
               "allowedHosts": [
                 "localhost",
                 "127.0.0.1",
-                "abdelrahman-emam-portfolio.vercel.app"
+                "abdelrahman-emam.vercel.app"
               ]
             },
             "ssr": {

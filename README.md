@@ -1,7 +1,7 @@
 # Abdelrahman Emam | Portfolio & CV
 
 <p align="center">
-  <a href="https://abdelrahman-emam-portfolio.vercel.app/">
+  <a href="https://abdelrahman-emam.vercel.app/">
     <img alt="Abdelrahman Emam Portfolio" src="public/og-image.jpg" width="820" />
   </a>
 </p>
@@ -18,9 +18,9 @@
 </p>
 
 <p align="center">
-  <a href="https://abdelrahman-emam-portfolio.vercel.app/">🌐 Live Portfolio</a>
+  <a href="https://abdelrahman-emam.vercel.app/">🌐 Live Portfolio</a>
   ·
-  <a href="https://abdelrahman-emam-portfolio.vercel.app/cv">📄 Live CV / Resume</a>
+  <a href="https://abdelrahman-emam.vercel.app/cv">📄 Live CV / Resume</a>
   ·
   <a href="https://www.linkedin.com/in/abd-el-rahman-emam">💼 LinkedIn</a>
   ·
@@ -161,8 +161,8 @@ The project is pre-configured for seamless deployment on **Vercel**, **Cloudflar
 *Frontend Developer | Angular Developer*  
 📍 Cairo, Egypt  
 
-* 🌐 **Portfolio**: [abdelrahman-emam-portfolio.vercel.app](https://abdelrahman-emam-portfolio.vercel.app/)
-* 📄 **CV / Resume**: [abdelrahman-emam-portfolio.vercel.app/cv](https://abdelrahman-emam-portfolio.vercel.app/cv)
+* 🌐 **Portfolio**: [abdelrahman-emam.vercel.app](https://abdelrahman-emam.vercel.app/)
+* 📄 **CV / Resume**: [abdelrahman-emam.vercel.app/cv](https://abdelrahman-emam.vercel.app/cv)
 * 💼 **LinkedIn**: [linkedin.com/in/abd-el-rahman-emam](https://www.linkedin.com/in/abd-el-rahman-emam)
 * 🐙 **GitHub**: [github.com/Abdelrahman-Tamer](https://github.com/Abdelrahman-Tamer)
 * ✉️ **Email**: [abdelrahmanacc84@gmail.com](mailto:abdelrahmanacc84@gmail.com)

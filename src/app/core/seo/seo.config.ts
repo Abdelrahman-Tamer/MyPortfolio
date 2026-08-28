@@ -1,6 +1,6 @@
 import type { SeoRouteData } from './seo.models';
 
-export const SITE_URL = 'https://abdelrahman-emam-portfolio.vercel.app';
+export const SITE_URL = 'https://abdelrahman-emam.vercel.app';
 export const SITE_NAME = 'Abdelrahman Emam Portfolio';
 export const AUTHOR_NAME = 'Abdelrahman Emam';
 export const AUTHOR_EMAIL = 'abdelrahmanacc84@gmail.com';
