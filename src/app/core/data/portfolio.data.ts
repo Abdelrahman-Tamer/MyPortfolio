@@ -264,8 +264,8 @@ export const portfolioData = {
         ar: 'Route Academy، القاهرة، مصر',
       },
       date: {
-        en: 'Mar 2025 – Present',
-        ar: 'مارس 2025 – حتى الآن',
+        en: 'Mar 2025 – Oct 2025',
+        ar: 'مارس 2025 – أكتوبر 2025',
       },
       description: {
         en: 'Delivered 4+ frontend projects including Angular e-commerce and healthcare platform.',
@@ -321,8 +321,8 @@ export const portfolioData = {
         ar: 'الجامعة المصرية للتعلم الإلكتروني، القاهرة، مصر',
       },
       date: {
-        en: '2022 – 2026 (Expected Graduation)',
-        ar: '2022 – 2026 (تخرج متوقع)',
+        en: '2022 – Jun 2026',
+        ar: '2022 – يونيو 2026',
       },
       description: {
         en: 'Relevant coursework: Web Development, Data Structures, Algorithms, Operating Systems, Databases.',

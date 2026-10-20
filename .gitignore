@@ -43,6 +43,7 @@ __screenshots__/
 /output/
 opencode.json
 public/og-preview.svg
+promo-video/
 .env
 .env.*
 !.env.example

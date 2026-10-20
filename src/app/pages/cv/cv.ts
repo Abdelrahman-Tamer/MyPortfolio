@@ -357,8 +357,8 @@ export class Cv {
           {
             title: 'متدرب تطوير واجهات أمامية (Frontend Developer Trainee)',
             meta: 'Route Academy، القاهرة، مصر',
-            date: 'مارس 2025 – حتى الآن',
-            dateTime: '2025-03',
+            date: 'مارس 2025 – أكتوبر 2025',
+            dateTime: '2025-03/2025-10',
             bullets: [
               'تنفيذ 4+ مشاريع واجهات أمامية تشمل متجر Angular SPA متكامل ومنصة رعاية صحية متعددة الصفحات.',
               'تطبيق التحقق من صحة المدخلات Form Validation لأكثر من 10 حقول بـ RegEx مع رسائل واضحة للمستخدم.',
@@ -388,8 +388,8 @@ export class Cv {
           {
             title: 'Frontend Developer Trainee',
             meta: 'Route Academy, Cairo, Egypt',
-            date: 'Mar 2025 – Present',
-            dateTime: '2025-03',
+            date: 'Mar 2025 – Oct 2025',
+            dateTime: '2025-03/2025-10',
             bullets: [
               'Delivered 4+ frontend projects including a full Angular e-commerce SPA and a multi-page healthcare platform.',
               'Implemented client-side form validation for 10+ fields using RegEx with clear user-facing error messages.',
@@ -421,16 +421,16 @@ export class Cv {
     this.isArabic()
       ? {
           title: 'بكالوريوس الحاسبات وتكنولوجيا المعلومات | الجامعة المصرية للتعلم الإلكتروني (EELU)، القاهرة، مصر',
-          date: '2022 – 2026 (تخرج متوقع)',
-          dateTime: '2022-02/2026-07',
+          date: '2022 – يونيو 2026',
+          dateTime: '2022-02/2026-06',
           coursework:
             'المقررات المرتبطة: تطوير الويب، هياكل البيانات، الخوارزميات، نظم التشغيل، قواعد البيانات.',
         }
       : {
           title:
             'B.Sc. Computer and Information Technology | Egyptian E-Learning University (EELU), Cairo, Egypt',
-          date: '2022 – 2026 (Expected Graduation)',
-          dateTime: '2022-02/2026-07',
+          date: '2022 – Jun 2026',
+          dateTime: '2022-02/2026-06',
           coursework:
             'Relevant Coursework: Web Development, Data Structures, Algorithms, Operating Systems, Databases',
         },
